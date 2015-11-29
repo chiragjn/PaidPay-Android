@@ -19,6 +19,14 @@ public final class R {
         public static final int abc_slide_in_top=0x7f040007;
         public static final int abc_slide_out_bottom=0x7f040008;
         public static final int abc_slide_out_top=0x7f040009;
+        public static final int design_fab_in=0x7f04000a;
+        public static final int design_fab_out=0x7f04000b;
+        public static final int design_snackbar_in=0x7f04000c;
+        public static final int design_snackbar_out=0x7f04000d;
+        public static final int enter=0x7f04000e;
+        public static final int exit=0x7f04000f;
+        public static final int pop_enter=0x7f040010;
+        public static final int pop_exit=0x7f040011;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -403,6 +411,28 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int barLength=0x7f0100e6;
+        /**  The amount that the scrolling view should overlap the bottom of any AppBarLayout 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behavior_overlapTop=0x7f01012a;
+        /**  The width of the border around the FAB. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int borderWidth=0x7f0100ff;
         /**  Style for buttons without an explicit border, often used in groups. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -654,6 +684,32 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int collapseIcon=0x7f0100d7;
+        /**  Specifies how the title should be positioned when collapsed. 
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push title to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push title to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push title to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push title to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place title in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the title if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place title in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the title in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push title to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push title to the end of its container, not changing its size. </td></tr>
+</table>
+         */
+        public static final int collapsedTitleGravity=0x7f010135;
+        /**  The text appearance of the CollapsingToolbarLayouts title when it is fully
+             'collapsed' 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int collapsedTitleTextAppearance=0x7f010131;
         /**  The drawing color for the bars 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -814,11 +870,50 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int contentInsetStart=0x7f0100ab;
+        /**  The drawable to use as a scrim on top of the CollapsingToolbarLayouts content when
+             it has been scrolled sufficiently off screen. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int contentScrim=0x7f010132;
         /**  The background used by framework controls. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int controlBackground=0x7f010085;
+        /**  Whether the layout is laid out as if the character counter will be displayed 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int counterEnabled=0x7f010121;
+        /**  The max length to display in the character counter 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int counterMaxLength=0x7f010122;
+        /**  TextAppearance of the character counter when the text is longer than the max 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int counterOverflowTextAppearance=0x7f010124;
+        /**  TextAppearance of the character counter 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int counterTextAppearance=0x7f010123;
         /**  Specifies a layout for custom navigation. Overrides navigationMode. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -966,6 +1061,53 @@ containing a value of this type.
 </table>
          */
         public static final int environment=0x7f01001b;
+        /**  Whether the layout is laid out as if an error will be displayed 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int errorEnabled=0x7f01011f;
+        /**  TextAppearance of any error message displayed 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int errorTextAppearance=0x7f010120;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleColor=0x7f0100fa;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleDimension=0x7f0100f9;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int exampleDrawable=0x7f0100fb;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleString=0x7f0100f8;
         /**  The drawable to show in the button for expanding the activities overflow popup.
              <strong>Note:</strong> Clients would like to set this drawable
              as a clue about the action the chosen activity will perform. For
@@ -976,6 +1118,122 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int expandActivityOverflowButtonDrawable=0x7f0100ca;
+        /**  The initial expanded state for the AppBarLayout. This only takes effect when this
+             view is a direct child of a CoordinatorLayout. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expanded=0x7f010127;
+        /**  Specifies how the title should be positioned when expanded. 
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push title to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push title to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push title to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push title to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place title in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the title if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place title in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the title in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push title to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push title to the end of its container, not changing its size. </td></tr>
+</table>
+         */
+        public static final int expandedTitleGravity=0x7f010136;
+        /**   Specifies extra space on the start, top, end and bottom
+              sides of the the expanded title text. Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMargin=0x7f01012b;
+        /**   Specifies extra space on the bottom side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginBottom=0x7f01012f;
+        /**   Specifies extra space on the end side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginEnd=0x7f01012e;
+        /**   Specifies extra space on the start side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginStart=0x7f01012c;
+        /**   Specifies extra space on the top side of the the expanded title text.
+              Margin values should be positive. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int expandedTitleMarginTop=0x7f01012d;
+        /**  The text appearance of the CollapsingToolbarLayout's title when it is fully
+             'expanded' 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int expandedTitleTextAppearance=0x7f010130;
+        /**  Size for the FAB. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>mini</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int fabSize=0x7f0100fd;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int foregroundInsidePadding=0x7f010107;
         /**  Fragment mode 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -1009,6 +1267,11 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int goIcon=0x7f0100c1;
+        /**  Layout resource to inflate as the header 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int headerLayout=0x7f010106;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1028,6 +1291,19 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int hideOnContentScroll=0x7f0100aa;
+        /**  Whether to animate hint state changes. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int hintAnimationEnabled=0x7f010125;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int hintTextAppearance=0x7f01011e;
         /**  Specifies a drawable to use for the 'home as up' indicator. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1099,6 +1375,12 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int initialActivityCount=0x7f0100c9;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int insetForeground=0x7f010100;
         /**  Specifies whether the theme is light, otherwise it is dark. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -1108,6 +1390,19 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int isLightTheme=0x7f01002c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int itemBackground=0x7f010104;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int itemIconTint=0x7f010102;
         /**  Specifies padding that should be applied to the left and right sides of
              system-provided items in the bar. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1120,11 +1415,142 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int itemPadding=0x7f0100a9;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int itemTextAppearance=0x7f010105;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int itemTextColor=0x7f010103;
+        /**  A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.
+             Child views can refer to these keylines for alignment using
+             layout_keyline="index" where index is a 0-based index into
+             this array. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int keylines=0x7f010118;
         /**  The layout to use for the search view. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int layout=0x7f0100bc;
+        /**  The id of an anchor view that this view should position relative to. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int layout_anchor=0x7f01011b;
+        /**  Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.  
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push object to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push object to the end of its container, not changing its size. </td></tr>
+</table>
+         */
+        public static final int layout_anchorGravity=0x7f01011d;
+        /**  The class name of a Behavior class defining special runtime behavior
+             for this child view. 
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layout_behavior=0x7f01011a;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td> The view will act as normal with no collapsing behavior. </td></tr>
+<tr><td><code>pin</code></td><td>1</td><td> The view will pin in place. </td></tr>
+<tr><td><code>parallax</code></td><td>2</td><td> The view will scroll in a parallax fashion. See the
+                 layout_collapseParallaxMultiplier attribute to change the multiplier. </td></tr>
+</table>
+         */
+        public static final int layout_collapseMode=0x7f010138;
+        /**  The multiplier used when layout_collapseMode is set to 'parallax'. The value should
+             be between 0.0 and 1.0. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layout_collapseParallaxMultiplier=0x7f010139;
+        /**  The index of a keyline this view should position relative to.
+             android:layout_gravity will affect how the view aligns to the
+             specified keyline. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layout_keyline=0x7f01011c;
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scroll</code></td><td>0x1</td><td> The view will be scroll in direct relation to scroll events. This flag needs to be
+                 set for any of the other flags to take effect. If any sibling views
+                 before this one do not have this flag, then this value has no effect. </td></tr>
+<tr><td><code>exitUntilCollapsed</code></td><td>0x2</td><td> When exiting (scrolling off screen) the view will be scrolled until it is
+                 'collapsed'. The collapsed height is defined by the view's minimum height. </td></tr>
+<tr><td><code>enterAlways</code></td><td>0x4</td><td> When entering (scrolling on screen) the view will scroll on any downwards
+                 scroll event, regardless of whether the scrolling view is also scrolling. This
+                 is commonly referred to as the 'quick return' pattern. </td></tr>
+<tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td> An additional flag for 'enterAlways' which modifies the returning view to
+                 only initially scroll back to it's collapsed height. Once the scrolling view has
+                 reached the end of it's scroll range, the remainder of this view will be scrolled
+                 into view. </td></tr>
+<tr><td><code>snap</code></td><td>0x10</td><td> Upon a scroll ending, if the view is only partially visible then it will be
+                 snapped and scrolled to it's closest edge. </td></tr>
+</table>
+         */
+        public static final int layout_scrollFlags=0x7f010128;
+        /**  An interpolator to use when scrolling this View. Only takes effect when View
+             is scrollable. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int layout_scrollInterpolator=0x7f010129;
         /**  Drawable used as a background for selected list items. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1302,6 +1728,16 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int maxActionInlineWidth=0x7f010126;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int maxButtonHeight=0x7f0100d6;
         /**  When set to true, all children with a weight will be considered having
              the minimum size of the largest child. If false, all children are
@@ -1314,6 +1750,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int measureWithLargestChild=0x7f0100cc;
+        /**  The menu resource to inflate and populate items from. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int menu=0x7f010101;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1424,6 +1865,17 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int preserveIconSpacing=0x7f0100b7;
+        /**  TranslationZ value for the FAB when pressed
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int pressedTranslationZ=0x7f0100fe;
         /**  Specifies the horizontal padding on either end for an embedded progress bar. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -1464,6 +1916,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int ratingBarStyle=0x7f010095;
+        /**  Ripple color for the FAB. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rippleColor=0x7f0100fc;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -1589,6 +2051,23 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int state_above_anchor=0x7f0100de;
+        /**  Drawable to display behind the status bar when the view is set to draw behind it. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int statusBarBackground=0x7f010119;
+        /**  The drawable to use as a scrim for the status bar content when the
+             CollapsingToolbarLayout has been scrolled sufficiently off screen. Only works on
+             Lollipop with the correct setup. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int statusBarScrim=0x7f010133;
         /**  Background for the section containing the action (e.g. voice search) 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1659,6 +2138,156 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int switchTextAppearance=0x7f0100ed;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tabBackground=0x7f01010b;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabContentStart=0x7f01010a;
+        /**  Standard gravity constant that a child supplies to its parent.
+             Defines how the child view should be positioned, on both the X and Y axes,
+             within its enclosing layout. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>fill</code></td><td>0</td><td></td></tr>
+<tr><td><code>center</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int tabGravity=0x7f01010d;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabIndicatorColor=0x7f010108;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabIndicatorHeight=0x7f010109;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabMaxWidth=0x7f01010f;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabMinWidth=0x7f01010e;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scrollable</code></td><td>0</td><td></td></tr>
+<tr><td><code>fixed</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int tabMode=0x7f01010c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPadding=0x7f010117;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingBottom=0x7f010116;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingEnd=0x7f010115;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingStart=0x7f010113;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabPaddingTop=0x7f010114;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabSelectedTextColor=0x7f010112;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tabTextAppearance=0x7f010110;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tabTextColor=0x7f010111;
         /**  Present the text in ALL CAPS. This may use a small-caps form when available. 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1744,6 +2373,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int title=0x7f01002a;
+        /**  Whether the CollapsingToolbarLayout should draw its own shrinking/growing title. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int titleEnabled=0x7f010137;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1813,6 +2451,12 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int titleTextStyle=0x7f01009c;
+        /**  The id of the primary Toolbar child that you wish to use for the purpose of collapsing.
+             If you do not set this then the first Toolbar child found will be used. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int toolbarId=0x7f010134;
         /**  Default Toolar NavigationButtonStyle 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -2081,20 +2725,20 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f0b0003;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f080058;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f080059;
-        public static final int abc_color_highlight_material=0x7f08005a;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f080061;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f080062;
+        public static final int abc_color_highlight_material=0x7f080063;
         public static final int abc_input_method_navigation_guard=0x7f080021;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f08005b;
-        public static final int abc_primary_text_disable_only_material_light=0x7f08005c;
-        public static final int abc_primary_text_material_dark=0x7f08005d;
-        public static final int abc_primary_text_material_light=0x7f08005e;
-        public static final int abc_search_url_text=0x7f08005f;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f080064;
+        public static final int abc_primary_text_disable_only_material_light=0x7f080065;
+        public static final int abc_primary_text_material_dark=0x7f080066;
+        public static final int abc_primary_text_material_light=0x7f080067;
+        public static final int abc_search_url_text=0x7f080068;
         public static final int abc_search_url_text_normal=0x7f08001e;
         public static final int abc_search_url_text_pressed=0x7f080020;
         public static final int abc_search_url_text_selected=0x7f08001f;
-        public static final int abc_secondary_text_material_dark=0x7f080060;
-        public static final int abc_secondary_text_material_light=0x7f080061;
+        public static final int abc_secondary_text_material_dark=0x7f080069;
+        public static final int abc_secondary_text_material_light=0x7f08006a;
         public static final int accent_material_dark=0x7f08002f;
         public static final int accent_material_light=0x7f08002e;
         public static final int background_floating_material_dark=0x7f080026;
@@ -2114,30 +2758,53 @@ containing a value of this type.
         public static final int button_material_dark=0x7f080030;
         public static final int button_material_light=0x7f080031;
         public static final int common_action_bar_splitter=0x7f080008;
-        public static final int common_google_signin_btn_text_dark=0x7f080062;
+        public static final int common_google_signin_btn_text_dark=0x7f08006b;
         /**  Google Sign-in Button Colors 
          */
         public static final int common_google_signin_btn_text_dark_default=0x7f080009;
         public static final int common_google_signin_btn_text_dark_disabled=0x7f08000b;
         public static final int common_google_signin_btn_text_dark_focused=0x7f08000c;
         public static final int common_google_signin_btn_text_dark_pressed=0x7f08000a;
-        public static final int common_google_signin_btn_text_light=0x7f080063;
+        public static final int common_google_signin_btn_text_light=0x7f08006c;
         public static final int common_google_signin_btn_text_light_default=0x7f08000d;
         public static final int common_google_signin_btn_text_light_disabled=0x7f08000f;
         public static final int common_google_signin_btn_text_light_focused=0x7f080010;
         public static final int common_google_signin_btn_text_light_pressed=0x7f08000e;
-        public static final int common_plus_signin_btn_text_dark=0x7f080064;
+        public static final int common_plus_signin_btn_text_dark=0x7f08006d;
         /**  Google Plus Sign-in Button Colors 
          */
         public static final int common_plus_signin_btn_text_dark_default=0x7f080000;
         public static final int common_plus_signin_btn_text_dark_disabled=0x7f080002;
         public static final int common_plus_signin_btn_text_dark_focused=0x7f080003;
         public static final int common_plus_signin_btn_text_dark_pressed=0x7f080001;
-        public static final int common_plus_signin_btn_text_light=0x7f080065;
+        public static final int common_plus_signin_btn_text_light=0x7f08006e;
         public static final int common_plus_signin_btn_text_light_default=0x7f080004;
         public static final int common_plus_signin_btn_text_light_disabled=0x7f080006;
         public static final int common_plus_signin_btn_text_light_focused=0x7f080007;
         public static final int common_plus_signin_btn_text_light_pressed=0x7f080005;
+        /**  Shadow color for the furthest pixels of a shadow 
+         */
+        public static final int design_fab_shadow_end_color=0x7f08005e;
+        /**  Shadow color for the middle pixels of a shadow 
+         */
+        public static final int design_fab_shadow_mid_color=0x7f08005d;
+        /**  Shadow color for the first pixels of a shadow 
+         */
+        public static final int design_fab_shadow_start_color=0x7f08005c;
+        /**  Color for the bottom inner pixels in the stroke: 4% black (these are multiplied) 
+         */
+        public static final int design_fab_stroke_end_inner_color=0x7f08005b;
+        /**  Color for the bottom outer pixels in the stroke: 6% black (these are multiplied) 
+         */
+        public static final int design_fab_stroke_end_outer_color=0x7f08005a;
+        /**  Color for the top inner pixels in the stroke: 10% white (these are multiplied) 
+         */
+        public static final int design_fab_stroke_top_inner_color=0x7f080059;
+        /**  Color for the top outer pixels in the stroke: 18% white (these are multiplied) 
+         */
+        public static final int design_fab_stroke_top_outer_color=0x7f080058;
+        public static final int design_snackbar_background_color=0x7f080060;
+        public static final int design_textinput_error_color=0x7f08005f;
         public static final int dim_foreground_disabled_material_dark=0x7f08003e;
         public static final int dim_foreground_disabled_material_light=0x7f08003f;
         public static final int dim_foreground_material_dark=0x7f08003c;
@@ -2196,8 +2863,8 @@ containing a value of this type.
         public static final int secondary_text_disabled_material_light=0x7f080049;
         public static final int switch_thumb_disabled_material_dark=0x7f080034;
         public static final int switch_thumb_disabled_material_light=0x7f080035;
-        public static final int switch_thumb_material_dark=0x7f080066;
-        public static final int switch_thumb_material_light=0x7f080067;
+        public static final int switch_thumb_material_dark=0x7f08006f;
+        public static final int switch_thumb_material_light=0x7f080070;
         public static final int switch_thumb_normal_material_dark=0x7f080032;
         public static final int switch_thumb_normal_material_light=0x7f080033;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f080016;
@@ -2218,8 +2885,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f080018;
         public static final int wallet_holo_blue_light=0x7f08001c;
         public static final int wallet_link_text_light=0x7f08001d;
-        public static final int wallet_primary_text_holo_light=0x7f080068;
-        public static final int wallet_secondary_text_holo_dark=0x7f080069;
+        public static final int wallet_primary_text_holo_light=0x7f080071;
+        public static final int wallet_secondary_text_holo_dark=0x7f080072;
     }
     public static final class dimen {
         /**  Default content inset of an action bar. 
@@ -2393,8 +3060,48 @@ containing a value of this type.
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f0c004b;
-        public static final int activity_vertical_margin=0x7f0c004c;
+        public static final int activity_horizontal_margin=0x7f0c0081;
+        public static final int activity_vertical_margin=0x7f0c0082;
+        /**  Default screen margins, per the Android Design guidelines. 
+ Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). 
+         */
+        public static final int citrus_activity_horizontal_margin=0x7f0c004b;
+        public static final int citrus_activity_vertical_margin=0x7f0c004c;
+        public static final int design_appbar_elevation=0x7f0c0080;
+        public static final int design_fab_border_width=0x7f0c006a;
+        public static final int design_fab_content_size=0x7f0c0067;
+        public static final int design_fab_elevation=0x7f0c0065;
+        public static final int design_fab_size_mini=0x7f0c0069;
+        public static final int design_fab_size_normal=0x7f0c0068;
+        public static final int design_fab_translation_z_pressed=0x7f0c0066;
+        public static final int design_navigation_elevation=0x7f0c006c;
+        public static final int design_navigation_icon_padding=0x7f0c006d;
+        public static final int design_navigation_icon_size=0x7f0c006e;
+        public static final int design_navigation_max_width=0x7f0c006b;
+        public static final int design_navigation_padding_bottom=0x7f0c0071;
+        public static final int design_navigation_padding_top_default=0x7f0c0070;
+        public static final int design_navigation_separator_vertical_padding=0x7f0c006f;
+        /**  The maximum width for a Snackbar's inline action. If the view is width than this then
+         the Snackbar will change to vertical stacking 
+         */
+        public static final int design_snackbar_action_inline_max_width=0x7f0c007e;
+        public static final int design_snackbar_background_corner_radius=0x7f0c0079;
+        public static final int design_snackbar_elevation=0x7f0c0078;
+        /**  Extra spacing between the action and message views 
+         */
+        public static final int design_snackbar_extra_spacing_horizontal=0x7f0c007d;
+        public static final int design_snackbar_max_width=0x7f0c0077;
+        public static final int design_snackbar_min_width=0x7f0c0076;
+        public static final int design_snackbar_padding_horizontal=0x7f0c007a;
+        public static final int design_snackbar_padding_vertical=0x7f0c007b;
+        public static final int design_snackbar_padding_vertical_2lines=0x7f0c007c;
+        public static final int design_snackbar_text_size=0x7f0c007f;
+        public static final int design_tab_max_width=0x7f0c0073;
+        public static final int design_tab_scrollable_min_width=0x7f0c0072;
+        public static final int design_tab_text_size=0x7f0c0074;
+        public static final int design_tab_text_size_2line=0x7f0c0075;
         public static final int disabled_alpha_material_dark=0x7f0c0001;
         public static final int disabled_alpha_material_light=0x7f0c0000;
         public static final int highlight_alpha_material_colored=0x7f0c0004;
@@ -2410,6 +3117,30 @@ containing a value of this type.
          Time) 
          */
         public static final int notification_subtext_size=0x7f0c0027;
+        public static final int otp_auto_detect_confirm_btn_top_margin=0x7f0c0064;
+        public static final int otp_auto_detect_enter_otp_edtxt_left_padding=0x7f0c005f;
+        public static final int otp_auto_detect_enter_otp_edtxt_right_padding=0x7f0c0060;
+        public static final int otp_auto_detect_enter_otp_layout_left_margin=0x7f0c005d;
+        public static final int otp_auto_detect_enter_otp_layout_right_margin=0x7f0c005e;
+        public static final int otp_auto_detect_header_margin=0x7f0c005b;
+        public static final int otp_auto_detect_header_textsize=0x7f0c005a;
+        public static final int otp_auto_detect_progress_bar_top_margin=0x7f0c005c;
+        public static final int otp_auto_detect_resend_btn_height=0x7f0c0062;
+        public static final int otp_auto_detect_resend_btn_right_margin=0x7f0c0063;
+        public static final int otp_auto_detect_resend_btn_width=0x7f0c0061;
+        public static final int otp_bottom_bar_bank_logo_margin=0x7f0c0051;
+        public static final int otp_bottom_bar_cancel_txn_textsize=0x7f0c0052;
+        public static final int otp_bottom_bar_layout_top_margin=0x7f0c0050;
+        public static final int otp_bottom_bar_secured_image_top_margin=0x7f0c004e;
+        public static final int otp_bottom_bar_secured_text_size=0x7f0c004f;
+        public static final int otp_bottom_bar_top_margin=0x7f0c004d;
+        public static final int otp_options_enter_pass_layout_right_margin=0x7f0c0056;
+        public static final int otp_options_enter_pass_textsize=0x7f0c0057;
+        public static final int otp_options_header_textsize=0x7f0c0053;
+        public static final int otp_options_header_top_margin=0x7f0c0054;
+        public static final int otp_options_layout_top_margin=0x7f0c0055;
+        public static final int otp_options_send_otp_layout_margin_left=0x7f0c0058;
+        public static final int otp_options_send_otp_textsize=0x7f0c0059;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha=0x7f020000;
@@ -2481,213 +3212,385 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020042;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020043;
         public static final int abc_textfield_search_material=0x7f020044;
-        public static final int border=0x7f020045;
-        public static final int bottom=0x7f020046;
-        public static final int cast_ic_notification_0=0x7f020047;
-        public static final int cast_ic_notification_1=0x7f020048;
-        public static final int cast_ic_notification_2=0x7f020049;
-        public static final int cast_ic_notification_connecting=0x7f02004a;
-        public static final int cast_ic_notification_on=0x7f02004b;
-        public static final int cit=0x7f02004c;
-        public static final int common_full_open_on_phone=0x7f02004d;
-        public static final int common_google_signin_btn_icon_dark=0x7f02004e;
-        public static final int common_google_signin_btn_icon_dark_disabled=0x7f02004f;
-        public static final int common_google_signin_btn_icon_dark_focused=0x7f020050;
-        public static final int common_google_signin_btn_icon_dark_normal=0x7f020051;
-        public static final int common_google_signin_btn_icon_dark_pressed=0x7f020052;
-        public static final int common_google_signin_btn_icon_light=0x7f020053;
-        public static final int common_google_signin_btn_icon_light_disabled=0x7f020054;
-        public static final int common_google_signin_btn_icon_light_focused=0x7f020055;
-        public static final int common_google_signin_btn_icon_light_normal=0x7f020056;
-        public static final int common_google_signin_btn_icon_light_pressed=0x7f020057;
-        public static final int common_google_signin_btn_text_dark=0x7f020058;
-        public static final int common_google_signin_btn_text_dark_disabled=0x7f020059;
-        public static final int common_google_signin_btn_text_dark_focused=0x7f02005a;
-        public static final int common_google_signin_btn_text_dark_normal=0x7f02005b;
-        public static final int common_google_signin_btn_text_dark_pressed=0x7f02005c;
-        public static final int common_google_signin_btn_text_light=0x7f02005d;
-        public static final int common_google_signin_btn_text_light_disabled=0x7f02005e;
-        public static final int common_google_signin_btn_text_light_focused=0x7f02005f;
-        public static final int common_google_signin_btn_text_light_normal=0x7f020060;
-        public static final int common_google_signin_btn_text_light_pressed=0x7f020061;
-        public static final int common_ic_googleplayservices=0x7f020062;
-        public static final int common_plus_signin_btn_icon_dark=0x7f020063;
-        public static final int common_plus_signin_btn_icon_dark_disabled=0x7f020064;
-        public static final int common_plus_signin_btn_icon_dark_focused=0x7f020065;
-        public static final int common_plus_signin_btn_icon_dark_normal=0x7f020066;
-        public static final int common_plus_signin_btn_icon_dark_pressed=0x7f020067;
-        public static final int common_plus_signin_btn_icon_light=0x7f020068;
-        public static final int common_plus_signin_btn_icon_light_disabled=0x7f020069;
-        public static final int common_plus_signin_btn_icon_light_focused=0x7f02006a;
-        public static final int common_plus_signin_btn_icon_light_normal=0x7f02006b;
-        public static final int common_plus_signin_btn_icon_light_pressed=0x7f02006c;
-        public static final int common_plus_signin_btn_text_dark=0x7f02006d;
-        public static final int common_plus_signin_btn_text_dark_disabled=0x7f02006e;
-        public static final int common_plus_signin_btn_text_dark_focused=0x7f02006f;
-        public static final int common_plus_signin_btn_text_dark_normal=0x7f020070;
-        public static final int common_plus_signin_btn_text_dark_pressed=0x7f020071;
-        public static final int common_plus_signin_btn_text_light=0x7f020072;
-        public static final int common_plus_signin_btn_text_light_disabled=0x7f020073;
-        public static final int common_plus_signin_btn_text_light_focused=0x7f020074;
-        public static final int common_plus_signin_btn_text_light_normal=0x7f020075;
-        public static final int common_plus_signin_btn_text_light_pressed=0x7f020076;
-        public static final int divider=0x7f020077;
-        public static final int ic_launcher=0x7f020078;
-        public static final int ic_plusone_medium_off_client=0x7f020079;
-        public static final int ic_plusone_small_off_client=0x7f02007a;
-        public static final int ic_plusone_standard_off_client=0x7f02007b;
-        public static final int ic_plusone_tall_off_client=0x7f02007c;
-        public static final int notification_template_icon_bg=0x7f020081;
-        public static final int powered_by_google_dark=0x7f02007d;
-        public static final int powered_by_google_light=0x7f02007e;
-        public static final int ribb_right=0x7f02007f;
-        public static final int top=0x7f020080;
+        public static final int abi_bank=0x7f020045;
+        public static final int amex=0x7f020046;
+        public static final int andhra_bank=0x7f020047;
+        public static final int arrow_down_icon=0x7f020048;
+        public static final int arrow_up_icon=0x7f020049;
+        public static final int axis_bank=0x7f02004a;
+        public static final int bank_of_baroda=0x7f02004b;
+        public static final int bank_of_india=0x7f02004c;
+        public static final int bank_of_maharashtra=0x7f02004d;
+        public static final int bank_of_maharshtra=0x7f02004e;
+        public static final int blackborder=0x7f02004f;
+        public static final int border=0x7f020050;
+        public static final int bottom=0x7f020051;
+        public static final int btn_confirm=0x7f020052;
+        public static final int btn_confirm_disabled=0x7f020053;
+        public static final int btn_resend=0x7f020054;
+        public static final int btn_resend_disabled=0x7f020055;
+        public static final int canara_bank=0x7f020056;
+        public static final int cast_ic_notification_0=0x7f020057;
+        public static final int cast_ic_notification_1=0x7f020058;
+        public static final int cast_ic_notification_2=0x7f020059;
+        public static final int cast_ic_notification_connecting=0x7f02005a;
+        public static final int cast_ic_notification_on=0x7f02005b;
+        public static final int catholic_syrian=0x7f02005c;
+        public static final int central_bank_of_india=0x7f02005d;
+        public static final int cirrus=0x7f02005e;
+        public static final int cit=0x7f02005f;
+        public static final int citi_bank=0x7f020060;
+        public static final int citrus=0x7f020061;
+        public static final int citrus_cash=0x7f020062;
+        public static final int city_union_bank=0x7f020063;
+        public static final int common_full_open_on_phone=0x7f020064;
+        public static final int common_google_signin_btn_icon_dark=0x7f020065;
+        public static final int common_google_signin_btn_icon_dark_disabled=0x7f020066;
+        public static final int common_google_signin_btn_icon_dark_focused=0x7f020067;
+        public static final int common_google_signin_btn_icon_dark_normal=0x7f020068;
+        public static final int common_google_signin_btn_icon_dark_pressed=0x7f020069;
+        public static final int common_google_signin_btn_icon_light=0x7f02006a;
+        public static final int common_google_signin_btn_icon_light_disabled=0x7f02006b;
+        public static final int common_google_signin_btn_icon_light_focused=0x7f02006c;
+        public static final int common_google_signin_btn_icon_light_normal=0x7f02006d;
+        public static final int common_google_signin_btn_icon_light_pressed=0x7f02006e;
+        public static final int common_google_signin_btn_text_dark=0x7f02006f;
+        public static final int common_google_signin_btn_text_dark_disabled=0x7f020070;
+        public static final int common_google_signin_btn_text_dark_focused=0x7f020071;
+        public static final int common_google_signin_btn_text_dark_normal=0x7f020072;
+        public static final int common_google_signin_btn_text_dark_pressed=0x7f020073;
+        public static final int common_google_signin_btn_text_light=0x7f020074;
+        public static final int common_google_signin_btn_text_light_disabled=0x7f020075;
+        public static final int common_google_signin_btn_text_light_focused=0x7f020076;
+        public static final int common_google_signin_btn_text_light_normal=0x7f020077;
+        public static final int common_google_signin_btn_text_light_pressed=0x7f020078;
+        public static final int common_ic_googleplayservices=0x7f020079;
+        public static final int common_plus_signin_btn_icon_dark=0x7f02007a;
+        public static final int common_plus_signin_btn_icon_dark_disabled=0x7f02007b;
+        public static final int common_plus_signin_btn_icon_dark_focused=0x7f02007c;
+        public static final int common_plus_signin_btn_icon_dark_normal=0x7f02007d;
+        public static final int common_plus_signin_btn_icon_dark_pressed=0x7f02007e;
+        public static final int common_plus_signin_btn_icon_light=0x7f02007f;
+        public static final int common_plus_signin_btn_icon_light_disabled=0x7f020080;
+        public static final int common_plus_signin_btn_icon_light_focused=0x7f020081;
+        public static final int common_plus_signin_btn_icon_light_normal=0x7f020082;
+        public static final int common_plus_signin_btn_icon_light_pressed=0x7f020083;
+        public static final int common_plus_signin_btn_text_dark=0x7f020084;
+        public static final int common_plus_signin_btn_text_dark_disabled=0x7f020085;
+        public static final int common_plus_signin_btn_text_dark_focused=0x7f020086;
+        public static final int common_plus_signin_btn_text_dark_normal=0x7f020087;
+        public static final int common_plus_signin_btn_text_dark_pressed=0x7f020088;
+        public static final int common_plus_signin_btn_text_light=0x7f020089;
+        public static final int common_plus_signin_btn_text_light_disabled=0x7f02008a;
+        public static final int common_plus_signin_btn_text_light_focused=0x7f02008b;
+        public static final int common_plus_signin_btn_text_light_normal=0x7f02008c;
+        public static final int common_plus_signin_btn_text_light_pressed=0x7f02008d;
+        public static final int corners=0x7f02008e;
+        public static final int corporation_bank=0x7f02008f;
+        public static final int cosmos_bank=0x7f020090;
+        public static final int dcb_bank=0x7f020091;
+        public static final int default_bank=0x7f020092;
+        public static final int design_fab_background=0x7f020093;
+        public static final int design_snackbar_background=0x7f020094;
+        public static final int deutsche_bank=0x7f020095;
+        public static final int dinerclub=0x7f020096;
+        public static final int discover=0x7f020097;
+        public static final int divider=0x7f020098;
+        public static final int enterpassword=0x7f020099;
+        public static final int federal_bank=0x7f02009a;
+        public static final int grayborder=0x7f02009b;
+        public static final int greentbn=0x7f02009c;
+        public static final int gwallet=0x7f02009d;
+        public static final int hdfc_bank=0x7f02009e;
+        public static final int ic_account_balance_wallet_white_48dp=0x7f02009f;
+        public static final int ic_compare_arrows_white_48dp=0x7f0200a0;
+        public static final int ic_delete_black_48dp=0x7f0200a1;
+        public static final int ic_face_black_24dp=0x7f0200a2;
+        public static final int ic_history_white_48dp=0x7f0200a3;
+        public static final int ic_launcher=0x7f0200a4;
+        public static final int ic_mode_edit_black_48dp=0x7f0200a5;
+        public static final int ic_plusone_medium_off_client=0x7f0200a6;
+        public static final int ic_plusone_small_off_client=0x7f0200a7;
+        public static final int ic_plusone_standard_off_client=0x7f0200a8;
+        public static final int ic_plusone_tall_off_client=0x7f0200a9;
+        public static final int ic_settings_white_48dp=0x7f0200aa;
+        public static final int icici_bank=0x7f0200ab;
+        public static final int idbi_bank=0x7f0200ac;
+        public static final int indian_bank=0x7f0200ad;
+        public static final int indian_overseas_bank=0x7f0200ae;
+        public static final int indusind_bank=0x7f0200af;
+        public static final int ing_vysa=0x7f0200b0;
+        public static final int jcb=0x7f0200b1;
+        public static final int karnataka_bank=0x7f0200b2;
+        public static final int karur_vyasa_bank=0x7f0200b3;
+        public static final int kotak_mahindra_bank=0x7f0200b4;
+        public static final int mastercard=0x7f0200b5;
+        public static final int mcrd=0x7f0200b6;
+        public static final int mobiwik=0x7f0200b7;
+        public static final int mtro=0x7f0200b8;
+        public static final int notification_template_icon_bg=0x7f0200dc;
+        public static final int optionbutton=0x7f0200b9;
+        public static final int otp_autodetect_progress=0x7f0200ba;
+        public static final int otpicon=0x7f0200bb;
+        public static final int oxigenwallet=0x7f0200bc;
+        public static final int paypal=0x7f0200bd;
+        public static final int paytm=0x7f0200be;
+        public static final int payu=0x7f0200bf;
+        public static final int powered_by_google_dark=0x7f0200c0;
+        public static final int powered_by_google_light=0x7f0200c1;
+        public static final int punjab_national=0x7f0200c2;
+        public static final int qrplaceholder=0x7f0200c3;
+        public static final int ribbon_right=0x7f0200c4;
+        public static final int rupay=0x7f0200c5;
+        public static final int sbi_bank=0x7f0200c6;
+        public static final int secured=0x7f0200c7;
+        public static final int separator=0x7f0200c8;
+        public static final int south_indian_bank=0x7f0200c9;
+        public static final int state_bank_of_bikaner_and_jaipur=0x7f0200ca;
+        public static final int state_bank_of_hyderabad=0x7f0200cb;
+        public static final int state_bank_of_mysore=0x7f0200cc;
+        public static final int state_bank_of_mysore_=0x7f0200cd;
+        public static final int state_bank_of_patiala=0x7f0200ce;
+        public static final int state_bank_of_travancore=0x7f0200cf;
+        public static final int textbox=0x7f0200d0;
+        public static final int top=0x7f0200d1;
+        public static final int triangle=0x7f0200d2;
+        public static final int uco=0x7f0200d3;
+        public static final int union_bank=0x7f0200d4;
+        public static final int union_bank_of_india=0x7f0200d5;
+        public static final int united_bank_of_india=0x7f0200d6;
+        public static final int vijaya_bank=0x7f0200d7;
+        public static final int visa=0x7f0200d8;
+        public static final int visacard=0x7f0200d9;
+        public static final int walletbg=0x7f0200da;
+        public static final int yes_bank=0x7f0200db;
     }
     public static final class id {
-        public static final int ScanButton=0x7f09007b;
-        public static final int action0=0x7f090082;
-        public static final int action_bar=0x7f090068;
+        public static final int action0=0x7f0900c0;
+        public static final int action_bar=0x7f090080;
         public static final int action_bar_activity_content=0x7f090004;
-        public static final int action_bar_container=0x7f090067;
-        public static final int action_bar_root=0x7f090063;
+        public static final int action_bar_container=0x7f09007f;
+        public static final int action_bar_root=0x7f09007b;
         public static final int action_bar_spinner=0x7f090003;
-        public static final int action_bar_subtitle=0x7f090049;
-        public static final int action_bar_title=0x7f090048;
-        public static final int action_context_bar=0x7f090069;
-        public static final int action_divider=0x7f090086;
+        public static final int action_bar_subtitle=0x7f090061;
+        public static final int action_bar_title=0x7f090060;
+        public static final int action_context_bar=0x7f090081;
+        public static final int action_divider=0x7f0900c4;
         public static final int action_menu_divider=0x7f090006;
         public static final int action_menu_presenter=0x7f090007;
-        public static final int action_mode_bar=0x7f090065;
-        public static final int action_mode_bar_stub=0x7f090064;
-        public static final int action_mode_close_button=0x7f09004a;
-        public static final int action_settings=0x7f09008f;
-        public static final int activity_chooser_view_content=0x7f09004b;
-        public static final int adjust_height=0x7f090010;
-        public static final int adjust_width=0x7f090011;
-        public static final int alertTitle=0x7f090057;
-        public static final int always=0x7f090040;
-        public static final int android_pay=0x7f090031;
-        public static final int android_pay_dark=0x7f090028;
-        public static final int android_pay_light=0x7f090029;
-        public static final int android_pay_light_with_border=0x7f09002a;
-        public static final int auto=0x7f09000d;
-        public static final int balance=0x7f090080;
-        public static final int beginning=0x7f090045;
-        public static final int book_now=0x7f090021;
-        public static final int buttonPanel=0x7f090052;
-        public static final int buyButton=0x7f09001d;
-        public static final int buy_now=0x7f090022;
-        public static final int buy_with=0x7f090023;
-        public static final int buy_with_google=0x7f090024;
-        public static final int cameraPreview=0x7f090079;
-        public static final int cancel_action=0x7f090083;
-        public static final int card_logo=0x7f09007e;
-        public static final int card_name=0x7f09007f;
+        public static final int action_mode_bar=0x7f09007d;
+        public static final int action_mode_bar_stub=0x7f09007c;
+        public static final int action_mode_close_button=0x7f090062;
+        public static final int action_settings=0x7f0900e0;
+        public static final int activity_chooser_view_content=0x7f090063;
+        public static final int adjust_height=0x7f090011;
+        public static final int adjust_width=0x7f090012;
+        public static final int alertTitle=0x7f09006f;
+        public static final int always=0x7f090041;
+        public static final int amount=0x7f0900a8;
+        public static final int amt=0x7f0900dd;
+        public static final int android_pay=0x7f090032;
+        public static final int android_pay_dark=0x7f090029;
+        public static final int android_pay_light=0x7f09002a;
+        public static final int android_pay_light_with_border=0x7f09002b;
+        public static final int auto=0x7f09000e;
+        public static final int balance=0x7f0900bc;
+        public static final int bankLogoImgViewId=0x7f0900d5;
+        public static final int bankNameTextViewId=0x7f0900d6;
+        public static final int beginning=0x7f090046;
+        public static final int billing=0x7f0900b0;
+        public static final int book_now=0x7f090022;
+        public static final int bottom=0x7f09004e;
+        public static final int buttonPanel=0x7f09006a;
+        public static final int buyButton=0x7f09001e;
+        public static final int buy_now=0x7f090023;
+        public static final int buy_with=0x7f090024;
+        public static final int buy_with_google=0x7f090025;
+        public static final int cameraPreview=0x7f0900a1;
+        public static final int cancelTransactionTxtId=0x7f0900d2;
+        public static final int cancel_action=0x7f0900c1;
+        public static final int card_bottom=0x7f0900be;
+        public static final int card_logo=0x7f0900ba;
+        public static final int card_name=0x7f0900bb;
         public static final int cast_notification_id=0x7f090000;
-        public static final int checkbox=0x7f090060;
-        public static final int chronometer=0x7f090089;
-        public static final int classic=0x7f09002b;
-        public static final int collapseActionView=0x7f090041;
-        public static final int contentPanel=0x7f090058;
-        public static final int custom=0x7f09005e;
-        public static final int customPanel=0x7f09005d;
-        public static final int dark=0x7f09000e;
-        public static final int decor_content_parent=0x7f090066;
-        public static final int default_activity_button=0x7f09004e;
-        public static final int disableHome=0x7f090035;
-        public static final int donate_with=0x7f090025;
-        public static final int donate_with_google=0x7f090026;
-        public static final int edit_query=0x7f09006a;
-        public static final int end=0x7f090046;
-        public static final int end_padder=0x7f09008e;
-        public static final int expand_activities_button=0x7f09004c;
-        public static final int expanded_menu=0x7f09005f;
-        public static final int expanding_layout=0x7f090081;
-        public static final int google_wallet_classic=0x7f09002c;
-        public static final int google_wallet_grayscale=0x7f09002d;
-        public static final int google_wallet_monochrome=0x7f09002e;
-        public static final int grayscale=0x7f09002f;
-        public static final int holo_dark=0x7f090017;
-        public static final int holo_light=0x7f090018;
+        public static final int center=0x7f09004c;
+        public static final int center_horizontal=0x7f09004f;
+        public static final int center_vertical=0x7f090050;
+        public static final int checkbox=0x7f090078;
+        public static final int chronometer=0x7f0900c7;
+        public static final int citrusLogoImgViewId=0x7f0900d3;
+        public static final int classic=0x7f09002c;
+        public static final int clip_horizontal=0x7f090051;
+        public static final int clip_vertical=0x7f090052;
+        public static final int collapseActionView=0x7f090042;
+        public static final int contentPanel=0x7f090070;
+        public static final int custom=0x7f090076;
+        public static final int customPanel=0x7f090075;
+        public static final int dark=0x7f09000f;
+        public static final int decor_content_parent=0x7f09007e;
+        public static final int default_activity_button=0x7f090066;
+        public static final int desc=0x7f0900a9;
+        public static final int design_menu_item_action_area=0x7f0900a0;
+        public static final int design_menu_item_action_area_stub=0x7f09009f;
+        public static final int design_menu_item_text=0x7f09009e;
+        public static final int design_navigation_view=0x7f09009d;
+        public static final int disableHome=0x7f090036;
+        public static final int donate_with=0x7f090026;
+        public static final int donate_with_google=0x7f090027;
+        public static final int edit_query=0x7f090082;
+        public static final int email=0x7f0900ae;
+        public static final int end=0x7f090047;
+        public static final int end_padder=0x7f0900cc;
+        public static final int enterAlways=0x7f090059;
+        public static final int enterAlwaysCollapsed=0x7f09005a;
+        public static final int enterOtpEditTxtId=0x7f0900cf;
+        public static final int enterOtpLayoutId=0x7f0900da;
+        public static final int enterPasswordImgViewId=0x7f0900d9;
+        public static final int enterPasswordLayoutId=0x7f0900d8;
+        public static final int exitUntilCollapsed=0x7f09005b;
+        public static final int expand_activities_button=0x7f090064;
+        public static final int expanded_menu=0x7f090077;
+        public static final int expanding_layout=0x7f0900bd;
+        public static final int fill=0x7f09004d;
+        public static final int fill_horizontal=0x7f090053;
+        public static final int fill_vertical=0x7f090054;
+        public static final int fixed=0x7f09004a;
+        public static final int generate=0x7f0900ab;
+        public static final int google_wallet_classic=0x7f09002d;
+        public static final int google_wallet_grayscale=0x7f09002e;
+        public static final int google_wallet_monochrome=0x7f09002f;
+        public static final int grayscale=0x7f090030;
+        public static final int history=0x7f0900a3;
+        public static final int holo_dark=0x7f090018;
+        public static final int holo_light=0x7f090019;
         public static final int home=0x7f090001;
-        public static final int homeAsUp=0x7f090036;
-        public static final int hybrid=0x7f090013;
-        public static final int icon=0x7f090050;
-        public static final int icon_only=0x7f09000a;
-        public static final int ifRoom=0x7f090042;
-        public static final int image=0x7f09004d;
-        public static final int info=0x7f09008d;
-        public static final int item_linear_layout=0x7f09007d;
-        public static final int light=0x7f09000f;
-        public static final int line1=0x7f090087;
-        public static final int line3=0x7f09008b;
-        public static final int listMode=0x7f090033;
-        public static final int list_item=0x7f09004f;
-        public static final int logo_only=0x7f090027;
-        public static final int lvExp=0x7f09007c;
-        public static final int match_parent=0x7f09001f;
-        public static final int media_actions=0x7f090085;
-        public static final int middle=0x7f090047;
-        public static final int monochrome=0x7f090030;
-        public static final int multiply=0x7f09003b;
-        public static final int never=0x7f090043;
-        public static final int none=0x7f090012;
-        public static final int normal=0x7f090014;
-        public static final int pager=0x7f090078;
-        public static final int parentPanel=0x7f090054;
-        public static final int parr=0x7f090077;
-        public static final int production=0x7f090019;
+        public static final int homeAsUp=0x7f090037;
+        public static final int hybrid=0x7f090014;
+        public static final int icon=0x7f090068;
+        public static final int icon_only=0x7f09000b;
+        public static final int ifRoom=0x7f090043;
+        public static final int image=0x7f090065;
+        public static final int info=0x7f0900cb;
+        public static final int item_linear_layout=0x7f0900b9;
+        public static final int item_name=0x7f090097;
+        public static final int item_price=0x7f090099;
+        public static final int item_quantity=0x7f090098;
+        public static final int left=0x7f090055;
+        public static final int light=0x7f090010;
+        public static final int line1=0x7f0900c5;
+        public static final int line3=0x7f0900c9;
+        public static final int listMode=0x7f090034;
+        public static final int list_item=0x7f090067;
+        public static final int logo_only=0x7f090028;
+        public static final int lvExp=0x7f0900a6;
+        public static final int match_parent=0x7f090020;
+        public static final int media_actions=0x7f0900c3;
+        public static final int merchant_billing_list=0x7f0900b6;
+        public static final int merchant_name=0x7f0900b5;
+        public static final int middle=0x7f090048;
+        public static final int mini=0x7f090049;
+        public static final int monochrome=0x7f090031;
+        public static final int multiply=0x7f09003c;
+        public static final int name=0x7f0900ad;
+        public static final int navigation_header_container=0x7f09009c;
+        public static final int never=0x7f090044;
+        public static final int new_confirm_pass=0x7f0900b4;
+        public static final int newpass=0x7f0900b3;
+        public static final int nm=0x7f0900de;
+        public static final int none=0x7f090013;
+        public static final int normal=0x7f090015;
+        public static final int offer_name=0x7f0900bf;
+        public static final int orignalpass=0x7f0900b2;
+        public static final int otpAutoDetectHeaderTxtId=0x7f0900cd;
+        public static final int otpAutoDetectProgressBarId=0x7f0900ce;
+        public static final int otpConfirmBtnId=0x7f0900d1;
+        public static final int otpPopupCancelImgViewId=0x7f090093;
+        public static final int otpPopupOverlayId=0x7f090090;
+        public static final int otpPopupSeparatorId=0x7f090094;
+        public static final int otpPopupViewId=0x7f090092;
+        public static final int otpResendBtnId=0x7f0900d0;
+        public static final int otp_popup_layout=0x7f090091;
+        public static final int pager=0x7f090096;
+        public static final int pagerparent=0x7f090095;
+        public static final int parallax=0x7f09005e;
+        public static final int parentPanel=0x7f09006c;
+        public static final int pay=0x7f0900b8;
+        public static final int pay_confirm=0x7f0900ac;
+        public static final int payment_webview=0x7f09008f;
+        public static final int phonenumber=0x7f0900af;
+        public static final int pin=0x7f09005f;
+        public static final int production=0x7f09001a;
         public static final int progress_circular=0x7f090008;
         public static final int progress_horizontal=0x7f090009;
-        public static final int radio=0x7f090062;
-        public static final int sandbox=0x7f09001a;
-        public static final int satellite=0x7f090015;
-        public static final int scanText=0x7f09007a;
-        public static final int screen=0x7f09003c;
-        public static final int scrollIndicatorDown=0x7f09005c;
-        public static final int scrollIndicatorUp=0x7f090059;
-        public static final int scrollView=0x7f09005a;
-        public static final int search_badge=0x7f09006c;
-        public static final int search_bar=0x7f09006b;
-        public static final int search_button=0x7f09006d;
-        public static final int search_close_btn=0x7f090072;
-        public static final int search_edit_frame=0x7f09006e;
-        public static final int search_go_btn=0x7f090074;
-        public static final int search_mag_icon=0x7f09006f;
-        public static final int search_plate=0x7f090070;
-        public static final int search_src_text=0x7f090071;
-        public static final int search_voice_btn=0x7f090075;
-        public static final int select_dialog_listview=0x7f090076;
-        public static final int selectionDetails=0x7f09001e;
-        public static final int shortcut=0x7f090061;
-        public static final int showCustom=0x7f090037;
-        public static final int showHome=0x7f090038;
-        public static final int showTitle=0x7f090039;
-        public static final int slide=0x7f090032;
-        public static final int spacer=0x7f090053;
+        public static final int qrcode=0x7f0900aa;
+        public static final int qt=0x7f0900df;
+        public static final int radio=0x7f09007a;
+        public static final int request=0x7f0900a5;
+        public static final int right=0x7f090056;
+        public static final int sandbox=0x7f09001b;
+        public static final int satellite=0x7f090016;
+        public static final int save=0x7f0900a7;
+        public static final int screen=0x7f09003d;
+        public static final int scroll=0x7f09005c;
+        public static final int scrollIndicatorDown=0x7f090074;
+        public static final int scrollIndicatorUp=0x7f090071;
+        public static final int scrollView=0x7f090072;
+        public static final int scrollable=0x7f09004b;
+        public static final int search_badge=0x7f090084;
+        public static final int search_bar=0x7f090083;
+        public static final int search_button=0x7f090085;
+        public static final int search_close_btn=0x7f09008a;
+        public static final int search_edit_frame=0x7f090086;
+        public static final int search_go_btn=0x7f09008c;
+        public static final int search_mag_icon=0x7f090087;
+        public static final int search_plate=0x7f090088;
+        public static final int search_src_text=0x7f090089;
+        public static final int search_voice_btn=0x7f09008d;
+        public static final int select_dialog_listview=0x7f09008e;
+        public static final int selectionDetails=0x7f09001f;
+        public static final int sendOtpImgViewId=0x7f0900db;
+        public static final int settings=0x7f0900a2;
+        public static final int shipping=0x7f0900b1;
+        public static final int shortcut=0x7f090079;
+        public static final int showCustom=0x7f090038;
+        public static final int showHome=0x7f090039;
+        public static final int showTitle=0x7f09003a;
+        public static final int slide=0x7f090033;
+        public static final int snackbar_action=0x7f09009b;
+        public static final int snackbar_text=0x7f09009a;
+        public static final int snap=0x7f09005d;
+        public static final int spacer=0x7f09006b;
         public static final int split_action_bar=0x7f090005;
-        public static final int src_atop=0x7f09003d;
-        public static final int src_in=0x7f09003e;
-        public static final int src_over=0x7f09003f;
-        public static final int standard=0x7f09000b;
-        public static final int status_bar_latest_event_content=0x7f090084;
-        public static final int strict_sandbox=0x7f09001b;
-        public static final int submit_area=0x7f090073;
-        public static final int tabMode=0x7f090034;
-        public static final int terrain=0x7f090016;
-        public static final int test=0x7f09001c;
-        public static final int text=0x7f09008c;
-        public static final int text2=0x7f09008a;
-        public static final int textSpacerNoButtons=0x7f09005b;
-        public static final int time=0x7f090088;
-        public static final int title=0x7f090051;
-        public static final int title_template=0x7f090056;
-        public static final int topPanel=0x7f090055;
+        public static final int src_atop=0x7f09003e;
+        public static final int src_in=0x7f09003f;
+        public static final int src_over=0x7f090040;
+        public static final int standard=0x7f09000c;
+        public static final int start=0x7f090057;
+        public static final int status_bar_latest_event_content=0x7f0900c2;
+        public static final int strict_sandbox=0x7f09001c;
+        public static final int submit_area=0x7f09008b;
+        public static final int tabMode=0x7f090035;
+        public static final int terrain=0x7f090017;
+        public static final int test=0x7f09001d;
+        public static final int text=0x7f0900ca;
+        public static final int text2=0x7f0900c8;
+        public static final int textSpacerNoButtons=0x7f090073;
+        public static final int textView=0x7f0900d7;
+        public static final int textView2=0x7f0900d4;
+        public static final int textView3=0x7f0900dc;
+        public static final int time=0x7f0900c6;
+        public static final int title=0x7f090069;
+        public static final int title_template=0x7f09006e;
+        public static final int top=0x7f090058;
+        public static final int topPanel=0x7f09006d;
+        public static final int total_price=0x7f0900b7;
         public static final int up=0x7f090002;
-        public static final int useLogo=0x7f09003a;
-        public static final int wide=0x7f09000c;
-        public static final int withText=0x7f090044;
-        public static final int wrap_content=0x7f090020;
+        public static final int useLogo=0x7f09003b;
+        public static final int view_offset_helper=0x7f09000a;
+        public static final int wallets=0x7f0900a4;
+        public static final int wide=0x7f09000d;
+        public static final int withText=0x7f090045;
+        public static final int wrap_content=0x7f090021;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur=0x7f0a0002;
@@ -2718,6 +3621,7 @@ containing a value of this type.
          */
         public static final int abc_max_action_buttons=0x7f0a0005;
         public static final int cancel_button_image_alpha=0x7f0a0004;
+        public static final int design_snackbar_text_max_lines=0x7f0a0006;
         public static final int google_play_services_version=0x7f0a0000;
         /**  Maximum numerical value that will be shown in a status bar
          notification icon or in the notification itself. Will be replaced
@@ -2752,28 +3656,52 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030016;
         public static final int abc_search_view=0x7f030017;
         public static final int abc_select_dialog_material=0x7f030018;
-        public static final int activity_main=0x7f030019;
-        public static final int fragment_collection_object=0x7f03001a;
-        public static final int fragment_collection_object_camera=0x7f03001b;
-        public static final int fragment_collection_object_history=0x7f03001c;
-        public static final int fragment_collection_object_wallet=0x7f03001d;
-        public static final int list_full_card=0x7f03001e;
-        public static final int notification_media_action=0x7f03001f;
-        public static final int notification_media_cancel_action=0x7f030020;
-        public static final int notification_template_big_media=0x7f030021;
-        public static final int notification_template_big_media_narrow=0x7f030022;
-        public static final int notification_template_lines=0x7f030023;
-        public static final int notification_template_media=0x7f030024;
-        public static final int notification_template_part_chronometer=0x7f030025;
-        public static final int notification_template_part_time=0x7f030026;
-        public static final int select_dialog_item_material=0x7f030027;
-        public static final int select_dialog_multichoice_material=0x7f030028;
-        public static final int select_dialog_singlechoice_material=0x7f030029;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002a;
-        public static final int testfl=0x7f03002b;
+        public static final int activity_citrus=0x7f030019;
+        public static final int activity_main=0x7f03001a;
+        public static final int bill_list_item=0x7f03001b;
+        public static final int design_layout_snackbar=0x7f03001c;
+        public static final int design_layout_snackbar_include=0x7f03001d;
+        public static final int design_layout_tab_icon=0x7f03001e;
+        public static final int design_layout_tab_text=0x7f03001f;
+        public static final int design_menu_item_action_area=0x7f030020;
+        public static final int design_navigation_item=0x7f030021;
+        public static final int design_navigation_item_header=0x7f030022;
+        public static final int design_navigation_item_separator=0x7f030023;
+        public static final int design_navigation_item_subheader=0x7f030024;
+        public static final int design_navigation_menu=0x7f030025;
+        public static final int design_navigation_menu_item=0x7f030026;
+        public static final int fragment_collection_object=0x7f030027;
+        public static final int fragment_collection_object_camera=0x7f030028;
+        public static final int fragment_collection_object_history=0x7f030029;
+        public static final int fragment_collection_object_wallet=0x7f03002a;
+        public static final int fragment_p2p=0x7f03002b;
+        public static final int fragment_pay_via=0x7f03002c;
+        public static final int fragment_settings=0x7f03002d;
+        public static final int fragment_transaction=0x7f03002e;
+        public static final int list_full_card=0x7f03002f;
+        public static final int list_full_cards_with_offers=0x7f030030;
+        public static final int notification_media_action=0x7f030031;
+        public static final int notification_media_cancel_action=0x7f030032;
+        public static final int notification_template_big_media=0x7f030033;
+        public static final int notification_template_big_media_narrow=0x7f030034;
+        public static final int notification_template_lines=0x7f030035;
+        public static final int notification_template_media=0x7f030036;
+        public static final int notification_template_part_chronometer=0x7f030037;
+        public static final int notification_template_part_time=0x7f030038;
+        public static final int otp_txn_auto_detect=0x7f030039;
+        public static final int otp_txn_bottom_bar=0x7f03003a;
+        public static final int otp_txn_options=0x7f03003b;
+        public static final int peer_fragment_transaction=0x7f03003c;
+        public static final int sample_otppopup_view=0x7f03003d;
+        public static final int select_dialog_item_material=0x7f03003e;
+        public static final int select_dialog_multichoice_material=0x7f03003f;
+        public static final int select_dialog_singlechoice_material=0x7f030040;
+        public static final int splash_layout=0x7f030041;
+        public static final int support_simple_spinner_dropdown_item=0x7f030042;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
+        public static final int menu_citrus=0x7f0d0001;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f050000;
@@ -2845,8 +3773,11 @@ containing a value of this type.
          */
         public static final int abc_toolbar_collapse_description=0x7f070030;
         public static final int accept=0x7f070002;
-        public static final int action_settings=0x7f070042;
+        public static final int action_settings=0x7f070043;
         public static final int app_name=0x7f070040;
+        /**  The class name to the ScrollingChildBehavior required for AppBarLayout 
+         */
+        public static final int appbar_scrolling_view_behavior=0x7f07004f;
         /**  Brand name for Facebook [DO NOT TRANSLATE] 
          */
         public static final int auth_google_play_services_client_facebook_display_name=0x7f070007;
@@ -2862,6 +3793,9 @@ containing a value of this type.
         /**  Label of a button to disconnect an active cast display connection.  [CHAR LIMIT=25] NOTE: Same text as msgid="9024230238785261495" 
          */
         public static final int cast_notification_disconnect=0x7f07000c;
+        /**  The text pattern for the character counter 
+         */
+        public static final int character_counter_pattern=0x7f070050;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
         public static final int common_android_wear_notification_needs_update_text=0x7f07000f;
@@ -2977,8 +3911,21 @@ containing a value of this type.
         public static final int create_calendar_message=0x7f070005;
         public static final int create_calendar_title=0x7f070004;
         public static final int decline=0x7f070003;
-        public static final int gcm_defaultSenderId=0x7f070043;
-        public static final int hello_world=0x7f070041;
+        public static final int gcm_defaultSenderId=0x7f070051;
+        public static final int hello_world=0x7f070042;
+        public static final int otp_autodetect_confirm_btn_text=0x7f07004b;
+        public static final int otp_autodetect_enter_otp_hint_text=0x7f07004a;
+        public static final int otp_autodetect_header_text=0x7f070048;
+        public static final int otp_autodetect_resend_btn_text=0x7f070049;
+        public static final int otp_cancel_transaction_text=0x7f070047;
+        public static final int otp_detection_failed_text=0x7f07004e;
+        public static final int otp_detection_success_text=0x7f07004d;
+        public static final int otp_options_enter_pass_text=0x7f070045;
+        /** Auto OTP
+         */
+        public static final int otp_options_header_text=0x7f070044;
+        public static final int otp_options_send_otp_text=0x7f070046;
+        public static final int otp_secured_text=0x7f07004c;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. May need to be localized
@@ -2988,6 +3935,7 @@ containing a value of this type.
         public static final int status_bar_notification_info_overflow=0x7f07003d;
         public static final int store_picture_message=0x7f070001;
         public static final int store_picture_title=0x7f070000;
+        public static final int title_activity_citrus=0x7f070041;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
  Text on a button that allows a user to make a payment with Google Wallet
@@ -3213,6 +4161,7 @@ containing a value of this type.
     
          */
         public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0600b3;
+        public static final int Base_Widget_Design_TabLayout=0x7f06013e;
         public static final int Platform_AppCompat=0x7f06010e;
         public static final int Platform_AppCompat_Light=0x7f06010f;
         /**  Overlay themes 
@@ -3285,6 +4234,13 @@ containing a value of this type.
         public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f06002f;
         public static final int TextAppearance_AppCompat_Widget_Switch=0x7f060068;
         public static final int TextAppearance_AppCompat_Widget_TextView_SpinnerItem=0x7f060069;
+        public static final int TextAppearance_Design_CollapsingToolbar_Expanded=0x7f06014a;
+        public static final int TextAppearance_Design_Counter=0x7f060143;
+        public static final int TextAppearance_Design_Counter_Overflow=0x7f060144;
+        public static final int TextAppearance_Design_Error=0x7f060142;
+        public static final int TextAppearance_Design_Hint=0x7f060141;
+        public static final int TextAppearance_Design_Snackbar_Message=0x7f060145;
+        public static final int TextAppearance_Design_Tab=0x7f06013f;
         /**  These styles didn't exist on v7. Since we only use the media template in later versions
          (ICS+), just define it here and use the correct references in values/v14 
  Use platform styles 
@@ -3336,6 +4292,7 @@ containing a value of this type.
         public static final int Theme_AppCompat_Light_Dialog_MinWidth=0x7f060107;
         public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f060101;
         public static final int Theme_AppCompat_Light_NoActionBar=0x7f0600ff;
+        public static final int Theme_AppCompat_Light_NoActionBar_FullScreen=0x7f06014b;
         public static final int Theme_AppCompat_NoActionBar=0x7f0600fe;
         public static final int Theme_IAPTheme=0x7f060000;
         public static final int ThemeOverlay_AppCompat=0x7f060109;
@@ -3445,6 +4402,15 @@ containing a value of this type.
          */
         public static final int Widget_AppCompat_Toolbar=0x7f06004a;
         public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f06004b;
+        public static final int Widget_Design_AppBarLayout=0x7f060148;
+        public static final int Widget_Design_CollapsingToolbar=0x7f060147;
+        public static final int Widget_Design_CoordinatorLayout=0x7f060149;
+        public static final int Widget_Design_FloatingActionButton=0x7f06013a;
+        public static final int Widget_Design_NavigationView=0x7f06013c;
+        public static final int Widget_Design_ScrimInsetsFrameLayout=0x7f06013b;
+        public static final int Widget_Design_Snackbar=0x7f060146;
+        public static final int Widget_Design_TabLayout=0x7f06013d;
+        public static final int Widget_Design_TextInputLayout=0x7f060140;
     }
     public static final class styleable {
         /**  ============================================ 
@@ -4291,6 +5257,121 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.shoshin.paidpay:singleChoiceItemLayout
         */
         public static final int AlertDialog_singleChoiceItemLayout = 4;
+        /** Attributes that can be used with a AppBarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_elevation com.shoshin.paidpay:elevation}</code></td><td> Elevation for the action bar itself </td></tr>
+           <tr><td><code>{@link #AppBarLayout_expanded com.shoshin.paidpay:expanded}</code></td><td> The initial expanded state for the AppBarLayout.</td></tr>
+           </table>
+           @see #AppBarLayout_android_background
+           @see #AppBarLayout_elevation
+           @see #AppBarLayout_expanded
+         */
+        public static final int[] AppBarLayout = {
+            0x010100d4, 0x7f0100af, 0x7f010127
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #AppBarLayout} array.
+          @attr name android:background
+        */
+        public static final int AppBarLayout_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Elevation for the action bar itself 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:elevation
+        */
+        public static final int AppBarLayout_elevation = 1;
+        /**
+          <p>
+          @attr description
+           The initial expanded state for the AppBarLayout. This only takes effect when this
+             view is a direct child of a CoordinatorLayout. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expanded
+        */
+        public static final int AppBarLayout_expanded = 2;
+        /** Attributes that can be used with a AppBarLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_layout_scrollFlags com.shoshin.paidpay:layout_scrollFlags}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_layout_scrollInterpolator com.shoshin.paidpay:layout_scrollInterpolator}</code></td><td> An interpolator to use when scrolling this View.</td></tr>
+           </table>
+           @see #AppBarLayout_LayoutParams_layout_scrollFlags
+           @see #AppBarLayout_LayoutParams_layout_scrollInterpolator
+         */
+        public static final int[] AppBarLayout_LayoutParams = {
+            0x7f010128, 0x7f010129
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#layout_scrollFlags}
+          attribute's value can be found in the {@link #AppBarLayout_LayoutParams} array.
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scroll</code></td><td>0x1</td><td> The view will be scroll in direct relation to scroll events. This flag needs to be
+                 set for any of the other flags to take effect. If any sibling views
+                 before this one do not have this flag, then this value has no effect. </td></tr>
+<tr><td><code>exitUntilCollapsed</code></td><td>0x2</td><td> When exiting (scrolling off screen) the view will be scrolled until it is
+                 'collapsed'. The collapsed height is defined by the view's minimum height. </td></tr>
+<tr><td><code>enterAlways</code></td><td>0x4</td><td> When entering (scrolling on screen) the view will scroll on any downwards
+                 scroll event, regardless of whether the scrolling view is also scrolling. This
+                 is commonly referred to as the 'quick return' pattern. </td></tr>
+<tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td> An additional flag for 'enterAlways' which modifies the returning view to
+                 only initially scroll back to it's collapsed height. Once the scrolling view has
+                 reached the end of it's scroll range, the remainder of this view will be scrolled
+                 into view. </td></tr>
+<tr><td><code>snap</code></td><td>0x10</td><td> Upon a scroll ending, if the view is only partially visible then it will be
+                 snapped and scrolled to it's closest edge. </td></tr>
+</table>
+          @attr name com.shoshin.paidpay:layout_scrollFlags
+        */
+        public static final int AppBarLayout_LayoutParams_layout_scrollFlags = 0;
+        /**
+          <p>
+          @attr description
+           An interpolator to use when scrolling this View. Only takes effect when View
+             is scrollable. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:layout_scrollInterpolator
+        */
+        public static final int AppBarLayout_LayoutParams_layout_scrollInterpolator = 1;
         /** Attributes that can be used with a AppCompatTextView.
            <p>Includes the following attributes:</p>
            <table>
@@ -4356,6 +5437,361 @@ containing a value of this type.
           @attr name com.shoshin.paidpay:allowStacking
         */
         public static final int ButtonBarLayout_allowStacking = 0;
+        /** Attributes that can be used with a CollapsingAppBarLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CollapsingAppBarLayout_LayoutParams_layout_collapseMode com.shoshin.paidpay:layout_collapseMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier com.shoshin.paidpay:layout_collapseParallaxMultiplier}</code></td><td> The multiplier used when layout_collapseMode is set to 'parallax'.</td></tr>
+           </table>
+           @see #CollapsingAppBarLayout_LayoutParams_layout_collapseMode
+           @see #CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier
+         */
+        public static final int[] CollapsingAppBarLayout_LayoutParams = {
+            0x7f010138, 0x7f010139
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#layout_collapseMode}
+          attribute's value can be found in the {@link #CollapsingAppBarLayout_LayoutParams} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td> The view will act as normal with no collapsing behavior. </td></tr>
+<tr><td><code>pin</code></td><td>1</td><td> The view will pin in place. </td></tr>
+<tr><td><code>parallax</code></td><td>2</td><td> The view will scroll in a parallax fashion. See the
+                 layout_collapseParallaxMultiplier attribute to change the multiplier. </td></tr>
+</table>
+          @attr name com.shoshin.paidpay:layout_collapseMode
+        */
+        public static final int CollapsingAppBarLayout_LayoutParams_layout_collapseMode = 0;
+        /**
+          <p>
+          @attr description
+           The multiplier used when layout_collapseMode is set to 'parallax'. The value should
+             be between 0.0 and 1.0. 
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:layout_collapseParallaxMultiplier
+        */
+        public static final int CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier = 1;
+        /** Attributes that can be used with a CollapsingToolbarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity com.shoshin.paidpay:collapsedTitleGravity}</code></td><td> Specifies how the title should be positioned when collapsed.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance com.shoshin.paidpay:collapsedTitleTextAppearance}</code></td><td> The text appearance of the CollapsingToolbarLayouts title when it is fully
+             'collapsed' </td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim com.shoshin.paidpay:contentScrim}</code></td><td> The drawable to use as a scrim on top of the CollapsingToolbarLayouts content when
+             it has been scrolled sufficiently off screen.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity com.shoshin.paidpay:expandedTitleGravity}</code></td><td> Specifies how the title should be positioned when expanded.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin com.shoshin.paidpay:expandedTitleMargin}</code></td><td>  Specifies extra space on the start, top, end and bottom
+              sides of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom com.shoshin.paidpay:expandedTitleMarginBottom}</code></td><td>  Specifies extra space on the bottom side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd com.shoshin.paidpay:expandedTitleMarginEnd}</code></td><td>  Specifies extra space on the end side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart com.shoshin.paidpay:expandedTitleMarginStart}</code></td><td>  Specifies extra space on the start side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop com.shoshin.paidpay:expandedTitleMarginTop}</code></td><td>  Specifies extra space on the top side of the the expanded title text.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance com.shoshin.paidpay:expandedTitleTextAppearance}</code></td><td> The text appearance of the CollapsingToolbarLayout's title when it is fully
+             'expanded' </td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim com.shoshin.paidpay:statusBarScrim}</code></td><td> The drawable to use as a scrim for the status bar content when the
+             CollapsingToolbarLayout has been scrolled sufficiently off screen.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_title com.shoshin.paidpay:title}</code></td><td> The title to show when titleEnabled is set to true.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled com.shoshin.paidpay:titleEnabled}</code></td><td> Whether the CollapsingToolbarLayout should draw its own shrinking/growing title.</td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId com.shoshin.paidpay:toolbarId}</code></td><td> The id of the primary Toolbar child that you wish to use for the purpose of collapsing.</td></tr>
+           </table>
+           @see #CollapsingToolbarLayout_collapsedTitleGravity
+           @see #CollapsingToolbarLayout_collapsedTitleTextAppearance
+           @see #CollapsingToolbarLayout_contentScrim
+           @see #CollapsingToolbarLayout_expandedTitleGravity
+           @see #CollapsingToolbarLayout_expandedTitleMargin
+           @see #CollapsingToolbarLayout_expandedTitleMarginBottom
+           @see #CollapsingToolbarLayout_expandedTitleMarginEnd
+           @see #CollapsingToolbarLayout_expandedTitleMarginStart
+           @see #CollapsingToolbarLayout_expandedTitleMarginTop
+           @see #CollapsingToolbarLayout_expandedTitleTextAppearance
+           @see #CollapsingToolbarLayout_statusBarScrim
+           @see #CollapsingToolbarLayout_title
+           @see #CollapsingToolbarLayout_titleEnabled
+           @see #CollapsingToolbarLayout_toolbarId
+         */
+        public static final int[] CollapsingToolbarLayout = {
+            0x7f01002a, 0x7f01012b, 0x7f01012c, 0x7f01012d,
+            0x7f01012e, 0x7f01012f, 0x7f010130, 0x7f010131,
+            0x7f010132, 0x7f010133, 0x7f010134, 0x7f010135,
+            0x7f010136, 0x7f010137
+        };
+        /**
+          <p>
+          @attr description
+           Specifies how the title should be positioned when collapsed. 
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push title to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push title to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push title to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push title to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place title in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the title if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place title in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the title in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push title to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push title to the end of its container, not changing its size. </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:collapsedTitleGravity
+        */
+        public static final int CollapsingToolbarLayout_collapsedTitleGravity = 11;
+        /**
+          <p>
+          @attr description
+           The text appearance of the CollapsingToolbarLayouts title when it is fully
+             'collapsed' 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:collapsedTitleTextAppearance
+        */
+        public static final int CollapsingToolbarLayout_collapsedTitleTextAppearance = 7;
+        /**
+          <p>
+          @attr description
+           The drawable to use as a scrim on top of the CollapsingToolbarLayouts content when
+             it has been scrolled sufficiently off screen. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:contentScrim
+        */
+        public static final int CollapsingToolbarLayout_contentScrim = 8;
+        /**
+          <p>
+          @attr description
+           Specifies how the title should be positioned when expanded. 
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push title to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push title to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push title to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push title to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place title in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the title if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place title in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the title in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push title to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push title to the end of its container, not changing its size. </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleGravity
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleGravity = 12;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the start, top, end and bottom
+              sides of the the expanded title text. Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleMargin
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMargin = 1;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the bottom side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleMarginBottom
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginBottom = 5;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the end side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleMarginEnd
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginEnd = 4;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the start side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleMarginStart
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginStart = 2;
+        /**
+          <p>
+          @attr description
+            Specifies extra space on the top side of the the expanded title text.
+              Margin values should be positive. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleMarginTop
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleMarginTop = 3;
+        /**
+          <p>
+          @attr description
+           The text appearance of the CollapsingToolbarLayout's title when it is fully
+             'expanded' 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:expandedTitleTextAppearance
+        */
+        public static final int CollapsingToolbarLayout_expandedTitleTextAppearance = 6;
+        /**
+          <p>
+          @attr description
+           The drawable to use as a scrim for the status bar content when the
+             CollapsingToolbarLayout has been scrolled sufficiently off screen. Only works on
+             Lollipop with the correct setup. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:statusBarScrim
+        */
+        public static final int CollapsingToolbarLayout_statusBarScrim = 9;
+        /**
+          <p>
+          @attr description
+           The title to show when titleEnabled is set to true. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:title
+        */
+        public static final int CollapsingToolbarLayout_title = 0;
+        /**
+          <p>
+          @attr description
+           Whether the CollapsingToolbarLayout should draw its own shrinking/growing title. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:titleEnabled
+        */
+        public static final int CollapsingToolbarLayout_titleEnabled = 13;
+        /**
+          <p>
+          @attr description
+           The id of the primary Toolbar child that you wish to use for the purpose of collapsing.
+             If you do not set this then the first Toolbar child found will be used. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:toolbarId
+        */
+        public static final int CollapsingToolbarLayout_toolbarId = 10;
         /** Attributes that can be used with a CompoundButton.
            <p>Includes the following attributes:</p>
            <table>
@@ -4422,6 +5858,165 @@ containing a value of this type.
           @attr name com.shoshin.paidpay:buttonTintMode
         */
         public static final int CompoundButton_buttonTintMode = 2;
+        /** Attributes that can be used with a CoordinatorLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CoordinatorLayout_keylines com.shoshin.paidpay:keylines}</code></td><td> A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.shoshin.paidpay:statusBarBackground}</code></td><td> Drawable to display behind the status bar when the view is set to draw behind it.</td></tr>
+           </table>
+           @see #CoordinatorLayout_keylines
+           @see #CoordinatorLayout_statusBarBackground
+         */
+        public static final int[] CoordinatorLayout = {
+            0x7f010118, 0x7f010119
+        };
+        /**
+          <p>
+          @attr description
+           A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.
+             Child views can refer to these keylines for alignment using
+             layout_keyline="index" where index is a 0-based index into
+             this array. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:keylines
+        */
+        public static final int CoordinatorLayout_keylines = 0;
+        /**
+          <p>
+          @attr description
+           Drawable to display behind the status bar when the view is set to draw behind it. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:statusBarBackground
+        */
+        public static final int CoordinatorLayout_statusBarBackground = 1;
+        /** Attributes that can be used with a CoordinatorLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_anchor com.shoshin.paidpay:layout_anchor}</code></td><td> The id of an anchor view that this view should position relative to.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_anchorGravity com.shoshin.paidpay:layout_anchorGravity}</code></td><td> Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_behavior com.shoshin.paidpay:layout_behavior}</code></td><td> The class name of a Behavior class defining special runtime behavior
+             for this child view.</td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_layout_keyline com.shoshin.paidpay:layout_keyline}</code></td><td> The index of a keyline this view should position relative to.</td></tr>
+           </table>
+           @see #CoordinatorLayout_LayoutParams_android_layout_gravity
+           @see #CoordinatorLayout_LayoutParams_layout_anchor
+           @see #CoordinatorLayout_LayoutParams_layout_anchorGravity
+           @see #CoordinatorLayout_LayoutParams_layout_behavior
+           @see #CoordinatorLayout_LayoutParams_layout_keyline
+         */
+        public static final int[] CoordinatorLayout_LayoutParams = {
+            0x010100b3, 0x7f01011a, 0x7f01011b, 0x7f01011c,
+            0x7f01011d
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+          @attr name android:layout_gravity
+        */
+        public static final int CoordinatorLayout_LayoutParams_android_layout_gravity = 0;
+        /**
+          <p>
+          @attr description
+           The id of an anchor view that this view should position relative to. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:layout_anchor
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_anchor = 2;
+        /**
+          <p>
+          @attr description
+           Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.  
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td> Push object to the beginning of its container, not changing its size. </td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td> Push object to the end of its container, not changing its size. </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:layout_anchorGravity
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_anchorGravity = 4;
+        /**
+          <p>
+          @attr description
+           The class name of a Behavior class defining special runtime behavior
+             for this child view. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:layout_behavior
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_behavior = 1;
+        /**
+          <p>
+          @attr description
+           The index of a keyline this view should position relative to.
+             android:layout_gravity will affect how the view aligns to the
+             specified keyline. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:layout_keyline
+        */
+        public static final int CoordinatorLayout_LayoutParams_layout_keyline = 3;
         /**  Attributes that can be specified to define a custom theme 
            <p>Includes the following attributes:</p>
            <table>
@@ -4623,6 +6218,208 @@ containing a value of this type.
           @attr name com.shoshin.paidpay:thickness
         */
         public static final int DrawerArrowToggle_thickness = 7;
+        /** Attributes that can be used with a FloatingActionButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #FloatingActionButton_backgroundTint com.shoshin.paidpay:backgroundTint}</code></td><td> Background for the FloatingActionButton </td></tr>
+           <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.shoshin.paidpay:backgroundTintMode}</code></td><td> Blending mode used to apply the background tint.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_borderWidth com.shoshin.paidpay:borderWidth}</code></td><td> The width of the border around the FAB.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_elevation com.shoshin.paidpay:elevation}</code></td><td> Elevation value for the FAB </td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fabSize com.shoshin.paidpay:fabSize}</code></td><td> Size for the FAB.</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ com.shoshin.paidpay:pressedTranslationZ}</code></td><td> TranslationZ value for the FAB when pressed</td></tr>
+           <tr><td><code>{@link #FloatingActionButton_rippleColor com.shoshin.paidpay:rippleColor}</code></td><td> Ripple color for the FAB.</td></tr>
+           </table>
+           @see #FloatingActionButton_backgroundTint
+           @see #FloatingActionButton_backgroundTintMode
+           @see #FloatingActionButton_borderWidth
+           @see #FloatingActionButton_elevation
+           @see #FloatingActionButton_fabSize
+           @see #FloatingActionButton_pressedTranslationZ
+           @see #FloatingActionButton_rippleColor
+         */
+        public static final int[] FloatingActionButton = {
+            0x7f0100af, 0x7f0100b5, 0x7f0100b6, 0x7f0100fc,
+            0x7f0100fd, 0x7f0100fe, 0x7f0100ff
+        };
+        /**
+          <p>
+          @attr description
+           Background for the FloatingActionButton 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:backgroundTint
+        */
+        public static final int FloatingActionButton_backgroundTint = 1;
+        /**
+          <p>
+          @attr description
+           Blending mode used to apply the background tint. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>src_over</code></td><td>3</td><td> The tint is drawn on top of the drawable.
+                 [Sa + (1 - Sa)*Da, Rc = Sc + (1 - Sa)*Dc] </td></tr>
+<tr><td><code>src_in</code></td><td>5</td><td> The tint is masked by the alpha channel of the drawable. The drawable’s
+                 color channels are thrown out. [Sa * Da, Sc * Da] </td></tr>
+<tr><td><code>src_atop</code></td><td>9</td><td> The tint is drawn above the drawable, but with the drawable’s alpha
+                 channel masking the result. [Da, Sc * Da + (1 - Sa) * Dc] </td></tr>
+<tr><td><code>multiply</code></td><td>14</td><td> Multiplies the color and alpha channels of the drawable with those of
+                 the tint. [Sa * Da, Sc * Dc] </td></tr>
+<tr><td><code>screen</code></td><td>15</td><td> [Sa + Da - Sa * Da, Sc + Dc - Sc * Dc] </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:backgroundTintMode
+        */
+        public static final int FloatingActionButton_backgroundTintMode = 2;
+        /**
+          <p>
+          @attr description
+           The width of the border around the FAB. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:borderWidth
+        */
+        public static final int FloatingActionButton_borderWidth = 6;
+        /**
+          <p>
+          @attr description
+           Elevation value for the FAB 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:elevation
+        */
+        public static final int FloatingActionButton_elevation = 0;
+        /**
+          <p>
+          @attr description
+           Size for the FAB. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>mini</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:fabSize
+        */
+        public static final int FloatingActionButton_fabSize = 4;
+        /**
+          <p>
+          @attr description
+           TranslationZ value for the FAB when pressed
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:pressedTranslationZ
+        */
+        public static final int FloatingActionButton_pressedTranslationZ = 5;
+        /**
+          <p>
+          @attr description
+           Ripple color for the FAB. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:rippleColor
+        */
+        public static final int FloatingActionButton_rippleColor = 3;
+        /** Attributes that can be used with a ForegroundLinearLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ForegroundLinearLayout_android_foreground android:foreground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ForegroundLinearLayout_android_foregroundGravity android:foregroundGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding com.shoshin.paidpay:foregroundInsidePadding}</code></td><td></td></tr>
+           </table>
+           @see #ForegroundLinearLayout_android_foreground
+           @see #ForegroundLinearLayout_android_foregroundGravity
+           @see #ForegroundLinearLayout_foregroundInsidePadding
+         */
+        public static final int[] ForegroundLinearLayout = {
+            0x01010109, 0x01010200, 0x7f010107
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#foreground}
+          attribute's value can be found in the {@link #ForegroundLinearLayout} array.
+          @attr name android:foreground
+        */
+        public static final int ForegroundLinearLayout_android_foreground = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#foregroundGravity}
+          attribute's value can be found in the {@link #ForegroundLinearLayout} array.
+          @attr name android:foregroundGravity
+        */
+        public static final int ForegroundLinearLayout_android_foregroundGravity = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#foregroundInsidePadding}
+          attribute's value can be found in the {@link #ForegroundLinearLayout} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:foregroundInsidePadding
+        */
+        public static final int ForegroundLinearLayout_foregroundInsidePadding = 2;
         /** Attributes that can be used with a LinearLayoutCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -5675,6 +7472,225 @@ containing a value of this type.
           @attr name com.shoshin.paidpay:preserveIconSpacing
         */
         public static final int MenuView_preserveIconSpacing = 7;
+        /** Attributes that can be used with a NavigationView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_elevation com.shoshin.paidpay:elevation}</code></td><td> Elevation for the action bar itself </td></tr>
+           <tr><td><code>{@link #NavigationView_headerLayout com.shoshin.paidpay:headerLayout}</code></td><td> Layout resource to inflate as the header </td></tr>
+           <tr><td><code>{@link #NavigationView_itemBackground com.shoshin.paidpay:itemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemIconTint com.shoshin.paidpay:itemIconTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemTextAppearance com.shoshin.paidpay:itemTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemTextColor com.shoshin.paidpay:itemTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_menu com.shoshin.paidpay:menu}</code></td><td> The menu resource to inflate and populate items from.</td></tr>
+           </table>
+           @see #NavigationView_android_background
+           @see #NavigationView_android_fitsSystemWindows
+           @see #NavigationView_android_maxWidth
+           @see #NavigationView_elevation
+           @see #NavigationView_headerLayout
+           @see #NavigationView_itemBackground
+           @see #NavigationView_itemIconTint
+           @see #NavigationView_itemTextAppearance
+           @see #NavigationView_itemTextColor
+           @see #NavigationView_menu
+         */
+        public static final int[] NavigationView = {
+            0x010100d4, 0x010100dd, 0x0101011f, 0x7f0100af,
+            0x7f010101, 0x7f010102, 0x7f010103, 0x7f010104,
+            0x7f010105, 0x7f010106
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #NavigationView} array.
+          @attr name android:background
+        */
+        public static final int NavigationView_android_background = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fitsSystemWindows}
+          attribute's value can be found in the {@link #NavigationView} array.
+          @attr name android:fitsSystemWindows
+        */
+        public static final int NavigationView_android_fitsSystemWindows = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
+          attribute's value can be found in the {@link #NavigationView} array.
+          @attr name android:maxWidth
+        */
+        public static final int NavigationView_android_maxWidth = 2;
+        /**
+          <p>
+          @attr description
+           Elevation for the action bar itself 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:elevation
+        */
+        public static final int NavigationView_elevation = 3;
+        /**
+          <p>
+          @attr description
+           Layout resource to inflate as the header 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:headerLayout
+        */
+        public static final int NavigationView_headerLayout = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#itemBackground}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.shoshin.paidpay:itemBackground
+        */
+        public static final int NavigationView_itemBackground = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#itemIconTint}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:itemIconTint
+        */
+        public static final int NavigationView_itemIconTint = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#itemTextAppearance}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.shoshin.paidpay:itemTextAppearance
+        */
+        public static final int NavigationView_itemTextAppearance = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#itemTextColor}
+          attribute's value can be found in the {@link #NavigationView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:itemTextColor
+        */
+        public static final int NavigationView_itemTextColor = 6;
+        /**
+          <p>
+          @attr description
+           The menu resource to inflate and populate items from. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:menu
+        */
+        public static final int NavigationView_menu = 4;
+        /** Attributes that can be used with a OTPPopupView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #OTPPopupView_exampleColor com.shoshin.paidpay:exampleColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #OTPPopupView_exampleDimension com.shoshin.paidpay:exampleDimension}</code></td><td></td></tr>
+           <tr><td><code>{@link #OTPPopupView_exampleDrawable com.shoshin.paidpay:exampleDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #OTPPopupView_exampleString com.shoshin.paidpay:exampleString}</code></td><td></td></tr>
+           </table>
+           @see #OTPPopupView_exampleColor
+           @see #OTPPopupView_exampleDimension
+           @see #OTPPopupView_exampleDrawable
+           @see #OTPPopupView_exampleString
+         */
+        public static final int[] OTPPopupView = {
+            0x7f0100f8, 0x7f0100f9, 0x7f0100fa, 0x7f0100fb
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#exampleColor}
+          attribute's value can be found in the {@link #OTPPopupView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:exampleColor
+        */
+        public static final int OTPPopupView_exampleColor = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#exampleDimension}
+          attribute's value can be found in the {@link #OTPPopupView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:exampleDimension
+        */
+        public static final int OTPPopupView_exampleDimension = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#exampleDrawable}
+          attribute's value can be found in the {@link #OTPPopupView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.shoshin.paidpay:exampleDrawable
+        */
+        public static final int OTPPopupView_exampleDrawable = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#exampleString}
+          attribute's value can be found in the {@link #OTPPopupView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:exampleString
+        */
+        public static final int OTPPopupView_exampleString = 0;
         /** Attributes that can be used with a PopupWindow.
            <p>Includes the following attributes:</p>
            <table>
@@ -5741,6 +7757,62 @@ containing a value of this type.
           @attr name com.shoshin.paidpay:state_above_anchor
         */
         public static final int PopupWindowBackgroundState_state_above_anchor = 0;
+        /** Attributes that can be used with a ScrimInsetsFrameLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground com.shoshin.paidpay:insetForeground}</code></td><td></td></tr>
+           </table>
+           @see #ScrimInsetsFrameLayout_insetForeground
+         */
+        public static final int[] ScrimInsetsFrameLayout = {
+            0x7f010100
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#insetForeground}
+          attribute's value can be found in the {@link #ScrimInsetsFrameLayout} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.shoshin.paidpay:insetForeground
+        */
+        public static final int ScrimInsetsFrameLayout_insetForeground = 0;
+        /** Attributes that can be used with a ScrollingViewBehavior_Params.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrollingViewBehavior_Params_behavior_overlapTop com.shoshin.paidpay:behavior_overlapTop}</code></td><td> The amount that the scrolling view should overlap the bottom of any AppBarLayout </td></tr>
+           </table>
+           @see #ScrollingViewBehavior_Params_behavior_overlapTop
+         */
+        public static final int[] ScrollingViewBehavior_Params = {
+            0x7f01012a
+        };
+        /**
+          <p>
+          @attr description
+           The amount that the scrolling view should overlap the bottom of any AppBarLayout 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:behavior_overlapTop
+        */
+        public static final int ScrollingViewBehavior_Params_behavior_overlapTop = 0;
         /** Attributes that can be used with a SearchView.
            <p>Includes the following attributes:</p>
            <table>
@@ -6066,6 +8138,63 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.shoshin.paidpay:scopeUris
         */
         public static final int SignInButton_scopeUris = 2;
+        /** Attributes that can be used with a SnackbarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SnackbarLayout_elevation com.shoshin.paidpay:elevation}</code></td><td> Elevation for the action bar itself </td></tr>
+           <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.shoshin.paidpay:maxActionInlineWidth}</code></td><td></td></tr>
+           </table>
+           @see #SnackbarLayout_android_maxWidth
+           @see #SnackbarLayout_elevation
+           @see #SnackbarLayout_maxActionInlineWidth
+         */
+        public static final int[] SnackbarLayout = {
+            0x0101011f, 0x7f0100af, 0x7f010126
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
+          attribute's value can be found in the {@link #SnackbarLayout} array.
+          @attr name android:maxWidth
+        */
+        public static final int SnackbarLayout_android_maxWidth = 0;
+        /**
+          <p>
+          @attr description
+           Elevation for the action bar itself 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:elevation
+        */
+        public static final int SnackbarLayout_elevation = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#maxActionInlineWidth}
+          attribute's value can be found in the {@link #SnackbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:maxActionInlineWidth
+        */
+        public static final int SnackbarLayout_maxActionInlineWidth = 2;
         /** Attributes that can be used with a Spinner.
            <p>Includes the following attributes:</p>
            <table>
@@ -6294,6 +8423,299 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.shoshin.paidpay:track
         */
         public static final int SwitchCompat_track = 3;
+        /** Attributes that can be used with a TabLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TabLayout_tabBackground com.shoshin.paidpay:tabBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabContentStart com.shoshin.paidpay:tabContentStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabGravity com.shoshin.paidpay:tabGravity}</code></td><td> Standard gravity constant that a child supplies to its parent.</td></tr>
+           <tr><td><code>{@link #TabLayout_tabIndicatorColor com.shoshin.paidpay:tabIndicatorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabIndicatorHeight com.shoshin.paidpay:tabIndicatorHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMaxWidth com.shoshin.paidpay:tabMaxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMinWidth com.shoshin.paidpay:tabMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMode com.shoshin.paidpay:tabMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPadding com.shoshin.paidpay:tabPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingBottom com.shoshin.paidpay:tabPaddingBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingEnd com.shoshin.paidpay:tabPaddingEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingStart com.shoshin.paidpay:tabPaddingStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingTop com.shoshin.paidpay:tabPaddingTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabSelectedTextColor com.shoshin.paidpay:tabSelectedTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabTextAppearance com.shoshin.paidpay:tabTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabTextColor com.shoshin.paidpay:tabTextColor}</code></td><td></td></tr>
+           </table>
+           @see #TabLayout_tabBackground
+           @see #TabLayout_tabContentStart
+           @see #TabLayout_tabGravity
+           @see #TabLayout_tabIndicatorColor
+           @see #TabLayout_tabIndicatorHeight
+           @see #TabLayout_tabMaxWidth
+           @see #TabLayout_tabMinWidth
+           @see #TabLayout_tabMode
+           @see #TabLayout_tabPadding
+           @see #TabLayout_tabPaddingBottom
+           @see #TabLayout_tabPaddingEnd
+           @see #TabLayout_tabPaddingStart
+           @see #TabLayout_tabPaddingTop
+           @see #TabLayout_tabSelectedTextColor
+           @see #TabLayout_tabTextAppearance
+           @see #TabLayout_tabTextColor
+         */
+        public static final int[] TabLayout = {
+            0x7f010108, 0x7f010109, 0x7f01010a, 0x7f01010b,
+            0x7f01010c, 0x7f01010d, 0x7f01010e, 0x7f01010f,
+            0x7f010110, 0x7f010111, 0x7f010112, 0x7f010113,
+            0x7f010114, 0x7f010115, 0x7f010116, 0x7f010117
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabBackground}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.shoshin.paidpay:tabBackground
+        */
+        public static final int TabLayout_tabBackground = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabContentStart}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabContentStart
+        */
+        public static final int TabLayout_tabContentStart = 2;
+        /**
+          <p>
+          @attr description
+           Standard gravity constant that a child supplies to its parent.
+             Defines how the child view should be positioned, on both the X and Y axes,
+             within its enclosing layout. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>fill</code></td><td>0</td><td></td></tr>
+<tr><td><code>center</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:tabGravity
+        */
+        public static final int TabLayout_tabGravity = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabIndicatorColor}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabIndicatorColor
+        */
+        public static final int TabLayout_tabIndicatorColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabIndicatorHeight}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabIndicatorHeight
+        */
+        public static final int TabLayout_tabIndicatorHeight = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabMaxWidth}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabMaxWidth
+        */
+        public static final int TabLayout_tabMaxWidth = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabMinWidth}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabMinWidth
+        */
+        public static final int TabLayout_tabMinWidth = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabMode}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scrollable</code></td><td>0</td><td></td></tr>
+<tr><td><code>fixed</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name com.shoshin.paidpay:tabMode
+        */
+        public static final int TabLayout_tabMode = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabPadding}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabPadding
+        */
+        public static final int TabLayout_tabPadding = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabPaddingBottom}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabPaddingBottom
+        */
+        public static final int TabLayout_tabPaddingBottom = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabPaddingEnd}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabPaddingEnd
+        */
+        public static final int TabLayout_tabPaddingEnd = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabPaddingStart}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabPaddingStart
+        */
+        public static final int TabLayout_tabPaddingStart = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabPaddingTop}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabPaddingTop
+        */
+        public static final int TabLayout_tabPaddingTop = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabSelectedTextColor}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabSelectedTextColor
+        */
+        public static final int TabLayout_tabSelectedTextColor = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabTextAppearance}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.shoshin.paidpay:tabTextAppearance
+        */
+        public static final int TabLayout_tabTextAppearance = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#tabTextColor}
+          attribute's value can be found in the {@link #TabLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.shoshin.paidpay:tabTextColor
+        */
+        public static final int TabLayout_tabTextColor = 9;
         /** Attributes that can be used with a TextAppearance.
            <p>Includes the following attributes:</p>
            <table>
@@ -6386,6 +8808,164 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.shoshin.paidpay:textAllCaps
         */
         public static final int TextAppearance_textAllCaps = 8;
+        /** Attributes that can be used with a TextInputLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TextInputLayout_android_hint android:hint}</code></td><td> The hint to display in the floating label </td></tr>
+           <tr><td><code>{@link #TextInputLayout_android_textColorHint android:textColorHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterEnabled com.shoshin.paidpay:counterEnabled}</code></td><td> Whether the layout is laid out as if the character counter will be displayed </td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterMaxLength com.shoshin.paidpay:counterMaxLength}</code></td><td> The max length to display in the character counter </td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance com.shoshin.paidpay:counterOverflowTextAppearance}</code></td><td> TextAppearance of the character counter when the text is longer than the max </td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterTextAppearance com.shoshin.paidpay:counterTextAppearance}</code></td><td> TextAppearance of the character counter </td></tr>
+           <tr><td><code>{@link #TextInputLayout_errorEnabled com.shoshin.paidpay:errorEnabled}</code></td><td> Whether the layout is laid out as if an error will be displayed </td></tr>
+           <tr><td><code>{@link #TextInputLayout_errorTextAppearance com.shoshin.paidpay:errorTextAppearance}</code></td><td> TextAppearance of any error message displayed </td></tr>
+           <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled com.shoshin.paidpay:hintAnimationEnabled}</code></td><td> Whether to animate hint state changes.</td></tr>
+           <tr><td><code>{@link #TextInputLayout_hintTextAppearance com.shoshin.paidpay:hintTextAppearance}</code></td><td></td></tr>
+           </table>
+           @see #TextInputLayout_android_hint
+           @see #TextInputLayout_android_textColorHint
+           @see #TextInputLayout_counterEnabled
+           @see #TextInputLayout_counterMaxLength
+           @see #TextInputLayout_counterOverflowTextAppearance
+           @see #TextInputLayout_counterTextAppearance
+           @see #TextInputLayout_errorEnabled
+           @see #TextInputLayout_errorTextAppearance
+           @see #TextInputLayout_hintAnimationEnabled
+           @see #TextInputLayout_hintTextAppearance
+         */
+        public static final int[] TextInputLayout = {
+            0x0101009a, 0x01010150, 0x7f01011e, 0x7f01011f,
+            0x7f010120, 0x7f010121, 0x7f010122, 0x7f010123,
+            0x7f010124, 0x7f010125
+        };
+        /**
+          <p>
+          @attr description
+           The hint to display in the floating label 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#hint}.
+          @attr name android:hint
+        */
+        public static final int TextInputLayout_android_hint = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textColorHint}
+          attribute's value can be found in the {@link #TextInputLayout} array.
+          @attr name android:textColorHint
+        */
+        public static final int TextInputLayout_android_textColorHint = 0;
+        /**
+          <p>
+          @attr description
+           Whether the layout is laid out as if the character counter will be displayed 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:counterEnabled
+        */
+        public static final int TextInputLayout_counterEnabled = 5;
+        /**
+          <p>
+          @attr description
+           The max length to display in the character counter 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:counterMaxLength
+        */
+        public static final int TextInputLayout_counterMaxLength = 6;
+        /**
+          <p>
+          @attr description
+           TextAppearance of the character counter when the text is longer than the max 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:counterOverflowTextAppearance
+        */
+        public static final int TextInputLayout_counterOverflowTextAppearance = 8;
+        /**
+          <p>
+          @attr description
+           TextAppearance of the character counter 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:counterTextAppearance
+        */
+        public static final int TextInputLayout_counterTextAppearance = 7;
+        /**
+          <p>
+          @attr description
+           Whether the layout is laid out as if an error will be displayed 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:errorEnabled
+        */
+        public static final int TextInputLayout_errorEnabled = 3;
+        /**
+          <p>
+          @attr description
+           TextAppearance of any error message displayed 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:errorTextAppearance
+        */
+        public static final int TextInputLayout_errorTextAppearance = 4;
+        /**
+          <p>
+          @attr description
+           Whether to animate hint state changes. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.shoshin.paidpay:hintAnimationEnabled
+        */
+        public static final int TextInputLayout_hintAnimationEnabled = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.shoshin.paidpay.R.attr#hintTextAppearance}
+          attribute's value can be found in the {@link #TextInputLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.shoshin.paidpay:hintTextAppearance
+        */
+        public static final int TextInputLayout_hintTextAppearance = 2;
         /**  These are the standard attributes that make up a complete theme. 
            <p>Includes the following attributes:</p>
            <table>

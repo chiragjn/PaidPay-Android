@@ -42,9 +42,8 @@ import android.widget.ListView;
 public class ExpandingListView extends ListView {
 
     private boolean mShouldRemoveObserver = false;
-
     private List<View> mViewsToDraw = new ArrayList<View>();
-
+    boolean isSomeoneExpanded = false;
     private int[] mTranslate;
 
     public ExpandingListView(Context context) {
@@ -74,13 +73,24 @@ public class ExpandingListView extends ListView {
             .OnItemClickListener() {
         @Override
         public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
-            ExpandableListItem viewObject = (ExpandableListItem)getItemAtPosition(getPositionForView
-                    (view));
-            if (!viewObject.isExpanded()) {
-                expandView(view);
-            } else {
-                collapseView(view);
-            }
+        	if(position < ((ExpandingListView)parent).getAdapter().getCount()-1)
+        	{
+	            ExpandableListItem viewObject = (ExpandableListItem)getItemAtPosition(getPositionForView
+	                    (view));
+	            if (!viewObject.isExpanded()){
+	            	if(isSomeoneExpanded) {
+		            	return;
+		            }else {
+		            	expandView(view);
+		            	isSomeoneExpanded = true;
+		            }	
+	            } 
+	            else
+	            {
+	                collapseView(view);
+	                isSomeoneExpanded = false;
+	            }
+        	}
         }
     };
 
@@ -296,6 +306,7 @@ public class ExpandingListView extends ListView {
                 animations.add(getAnimation(view, -yTranslateTop, yTranslateBottom));
 
                 /* Adds an animation for fading in the extra content. */
+                //TODO
                 animations.add(ObjectAnimator.ofFloat(view.findViewById(R.id.expanding_layout),
                         View.ALPHA, 0, 1));
 
@@ -489,6 +500,7 @@ public class ExpandingListView extends ListView {
                 animations.add(getAnimation(view, yTranslateTop, -yTranslateBottom));
 
                 /* Adds an animation for fading out the extra content. */
+                //TODO
                 animations.add(ObjectAnimator.ofFloat(expandingLayout, View.ALPHA, 1, 0));
 
                 /* Disabled the ListView for the duration of the animation.*/
@@ -511,6 +523,7 @@ public class ExpandingListView extends ListView {
                         * by a cell that was expanded, but not yet collapsed, so its state
                         * should persist in an expanded state with the extra content visible.*/
                         expandingLayout.setAlpha(1);
+                        invalidateViews();
                     }
                 });
                 s.start();

@@ -24,20 +24,22 @@ package com.shoshin.paidpay;
  */
 public class ExpandableListItem implements OnSizeChangedListener {
 
-    private String card_name;
-    private String balance;
-    private boolean mIsExpanded;
-    private int card_logo;
-    private int mCollapsedHeight;
-    private int mExpandedHeight;
+    String card_name;
+    String balance;
+    boolean mIsExpanded;
+    int card_logo;
+    int mCollapsedHeight;
+    int mExpandedHeight;
+    String cardType;
 
-    public ExpandableListItem(String card_name, int card_logo,int collaspedHeight, String balance) {
+    public ExpandableListItem(String card_name, int card_logo,int collaspedHeight, String balance,String type) {
     	this.card_name =  card_name;
         this.card_logo = card_logo;
         this.mCollapsedHeight = collaspedHeight;
         this.mIsExpanded = false;
         this.balance = balance;
         this.mExpandedHeight = -1;
+        this.cardType = type;
     }
 
     public boolean isExpanded() {
@@ -74,6 +76,10 @@ public class ExpandableListItem implements OnSizeChangedListener {
 
     public int getExpandedHeight() {
         return mExpandedHeight;
+    }
+    
+    public String getType() {
+        return cardType;
     }
 
     public void setExpandedHeight(int expandedHeight) {

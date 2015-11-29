@@ -1,11 +1,12 @@
 package com.shoshin.paidpay;
 
-import com.google.android.gms.gcm.GcmListenerService;
-
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+
+import com.google.android.gms.gcm.GcmListenerService;
 
 public class GcmMessageHandler extends GcmListenerService {
     public static final int MESSAGE_NOTIFICATION_ID = 435345;
@@ -13,8 +14,9 @@ public class GcmMessageHandler extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
         String message = data.getString("message");
-
-        createNotification(from, message);
+        String topic = data.getString("topic");
+        Log.e("GCM","Recieved");
+        createNotification(topic, message);
     }
 
         // Creates notification based on title and body received

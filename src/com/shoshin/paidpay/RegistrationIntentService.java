@@ -1,5 +1,7 @@
 package com.shoshin.paidpay;
 
+import java.io.IOException;
+
 import android.annotation.SuppressLint;
 import android.app.IntentService;
 import android.content.Intent;
@@ -7,10 +9,10 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+
 import com.google.android.gms.gcm.GcmPubSub;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
-import java.io.IOException;
 
 public class RegistrationIntentService extends IntentService {
 
@@ -72,6 +74,7 @@ public class RegistrationIntentService extends IntentService {
     private void sendRegistrationToServer(String token) {
         // Add custom implementation, as needed.
     	//
+    	Log.e("GCMMMM",token);
     }
 
     /**

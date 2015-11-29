@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF" 
+    android:weightSum="1.0">
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.90"
+        android:orientation="vertical"
+        android:padding="10dp">
+    
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="25dp"
+            android:text="Peer transfer"
+            android:textSize="30dp"
+             />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#000000" />
+    
+     
+       
+     	<TextView 
+     	    android:id="@+id/amt"
+     	    android:layout_width="match_parent"
+     	    android:layout_height="wrap_content"
+     	    android:padding="15dp"
+     	    android:textSize="20dp"
+     	    android:text="Amount: Rs."/>
+     	
+     	<TextView 
+     	    android:id="@+id/nm"
+     	    android:layout_width="match_parent"
+     	    android:layout_height="wrap_content"
+     	    android:textSize="20dp"
+     	    android:padding="15dp"
+     	    android:text="To: "/>
+     	
+     	<TextView 
+     	    android:id="@+id/qt"
+     	    android:layout_width="match_parent"
+     	    android:layout_height="wrap_content"
+     	    android:textSize="15dp"
+     	    android:padding="10dp"
+     	    android:textColor="#777"
+     	    android:paddingTop="25dp"
+     	    android:text=""/>
+       
+     
+       
+     
+     </LinearLayout>
+       
+     
+     
+     <Button
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.10"
+        android:background="@drawable/greentbn"
+        android:text="Pay"
+        android:textColor="#fff"
+ 		android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="15dp" />
+    
+
+</LinearLayout>

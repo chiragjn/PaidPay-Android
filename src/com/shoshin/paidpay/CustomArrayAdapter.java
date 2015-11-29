@@ -26,6 +26,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.opengl.Visibility;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,6 +83,14 @@ public class CustomArrayAdapter extends ArrayAdapter<ExpandableListItem> {
         TextView balance = (TextView)convertView.findViewById(R.id.balance);
        // TextView offer = (TextView)convertView.findViewById(R.id.offer_name);
         
+        if(position==mData.size()-1)
+        {
+        	linearLayout.setVisibility(View.INVISIBLE);
+        	ExpandingLayout expandingLayout = (ExpandingLayout)convertView.findViewById(R.id
+                    .expanding_layout);
+        	expandingLayout.setExpandedHeight(object.getCollapsedHeight());
+        	 return convertView;
+        }
         cardName.setText(object.getCardName());
         cardLogo.setImageBitmap(BitmapFactory.decodeResource(getContext()
                 .getResources(), object.getCardLogo(), null));

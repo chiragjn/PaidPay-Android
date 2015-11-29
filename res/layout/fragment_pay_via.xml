@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:weightSum="100"  >
+    
+ <TextView 
+        android:text="Your Wallet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_weight="10"
+        android:layout_gravity="center"/>
+ 
+  <com.shoshin.paidpay.ExpandingListViewPayVia
+        android:id="@+id/lvExp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/corners"
+        android:divider="#5D4037"
+        android:layout_weight="80"
+        android:dividerHeight="0dp" >
+  </com.shoshin.paidpay.ExpandingListViewPayVia>
+  
+  <Button
+        android:id="@+id/pay_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@drawable/greentbn"
+        android:text="PAY"
+        android:textColor="#fff"
+ 		android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+</LinearLayout>

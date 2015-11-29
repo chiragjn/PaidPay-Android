@@ -1,14 +1,18 @@
 package com.shoshin.paidpay;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
- 
+import android.util.Log;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
  
 public class AppController extends Application {
+	
+	
+	public SharedPreferences prefs;
  
     public static final String TAG = AppController.class
             .getSimpleName();
@@ -22,6 +26,7 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        prefs = this.getSharedPreferences("paidpay", 2);
     }
  
     public static synchronized AppController getInstance() {
@@ -29,6 +34,7 @@ public class AppController extends Application {
     }
  
     public RequestQueue getRequestQueue() {
+    	Log.e("create.","RQ");
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         }

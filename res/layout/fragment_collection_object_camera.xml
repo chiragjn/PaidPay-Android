@@ -2,26 +2,64 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    
      >
 
   <FrameLayout
     android:id="@+id/cameraPreview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="1"
-  />
+    android:layout_weight="1">
+    
+      
+        
+  
+      
+	</FrameLayout>
+	<ImageView 
+          android:id="@+id/settings"
+          android:src="@drawable/ic_settings_white_48dp"
+          android:layout_gravity="top|right"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:paddingTop="8dp"
+          android:paddingRight="8dp"
+          
+          /> 
+          
+	<ImageView 
+          android:id="@+id/history"
+          android:src="@drawable/ic_history_white_48dp"
+          android:layout_gravity="bottom|left"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:paddingBottom="8dp"
+          android:paddingLeft="8dp"
+          
+          /> 
+          
+	<ImageView 
+          android:id="@+id/wallets"
+          android:src="@drawable/ic_account_balance_wallet_white_48dp"
+          android:layout_gravity="bottom|right"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:paddingBottom="8dp"
+          android:paddingRight="8dp"
+          
+          /> 
+          
+	
+	<ImageView 
+          android:id="@+id/request"
+          android:src="@drawable/ic_compare_arrows_white_48dp"
+          android:layout_gravity="top|left"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:paddingTop="8dp"
+          android:paddingLeft="8dp"
+          
+          /> 
 
-  <TextView
-    android:id="@+id/scanText"
-    android:text="Scanning..."
-    android:layout_height="wrap_content" 
-    android:layout_width="match_parent">
-  </TextView>
-  <Button
-    android:id="@+id/ScanButton"
-    android:text="Scan"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-  />
+  
 </FrameLayout>

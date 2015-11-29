@@ -7,22 +7,13 @@ package com.shoshin.paidpay;
 
 import java.io.IOException;
 
-import android.app.Activity;
-import android.os.Bundle;
-
-import android.util.Log;
-
-import android.view.View;
-import android.view.Surface;
-import android.view.SurfaceView;
-import android.view.SurfaceHolder;
-
 import android.content.Context;
-
 import android.hardware.Camera;
-import android.hardware.Camera.PreviewCallback;
 import android.hardware.Camera.AutoFocusCallback;
-import android.hardware.Camera.Parameters;
+import android.hardware.Camera.PreviewCallback;
+import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 
 /** A basic Camera preview class */
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
@@ -96,7 +87,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         try {
             // Hard code camera surface rotation 90 degs to match Activity view in portrait
             mCamera.setDisplayOrientation(90);
-
             mCamera.setPreviewDisplay(mHolder);
             mCamera.setPreviewCallback(previewCallback);
             mCamera.startPreview();
