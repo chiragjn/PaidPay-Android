@@ -9,9 +9,9 @@ Alpha
 
 ####Features/TODO:
 
-*Account/Wallets Aggregation
-*Pay by Scanning QR Code
-*Send Money to Anyone by Generating QR Code
-*Pay By NFC
-*Maintain Card Details And Shipping Address Entirely Offline
-*Payment Data Analysis
+* Account/Wallets Aggregation
+* Pay by Scanning QR Code
+* Send Money to Anyone by Generating QR Code
+* Pay By NFC
+* Maintain Card Details And Shipping Address Entirely Offline
+* Payment Data Analysis
