@@ -1,13 +1,25 @@
 # PaidPay-Android
 Project Android App Repository for Barclays' Rise Heroes V/S Hackers Hack-a-thon
 
+#About Hack-a-thon code:
+
+
+* This code was written in a hack-a-thon in a span of atmost 36 hours.
+* This repo was created for the judges to verify our submission to the hack-a-thon.
+* All this code is a team effort and not mine alone.
+* No coding conventions and software development principles were followed during the 
+production of this code.
+* This project is a prototype which is in it's nascent state.
+* It contains deliberate hacks to make the project prototype presentable.
+* __This is not how I code for long run projects__.
+* __Nobody should absolutely draw inspiration from such code__.
+* __This project has my dirty code but I won't disown it__.
+
+
 ####Project Goal:
 Make Payments Easier
 
-####Project Status :
-Alpha
-
-####Features/TODO:
+####Features:
 
 * Account/Wallets Aggregation
 * Pay by Scanning QR Code
